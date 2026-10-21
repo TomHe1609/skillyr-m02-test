@@ -272,6 +272,11 @@ body[data-page="cards"] .card-front h2{white-space:pre-line}
 .card-example{margin:0;width:100%;min-width:0;padding:13px;text-align:left;font-size:11px;line-height:1.7;background:#151627;border:1px solid #3c344c;border-radius:9px;white-space:pre-wrap;overflow-wrap:anywhere}
 .card-references{margin-top:13px}.card-references ul{padding-left:17px;margin:12px 0}.card-references li{margin:9px 0;overflow-wrap:anywhere;font-size:11px;line-height:1.6}.card-references a{color:#c4a8e2}.card-references p{font-size:10px;line-height:1.7;color:#aaa0ba}
 </style>
+<style id="cloze-highlight-style">
+.cloze-fill,.cloze-gap{color:#dfc5ff;background:#a782d52b;border-radius:4px;padding:0 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.cloze-fill{font-weight:700}.cloze-gap{border-bottom:1px solid #bda1e0}
+.card-references .cloze-context{font-size:12px;line-height:1.75;color:#bfb3ce;white-space:pre-line}
+</style>
 </head>
 <body><div class="app"><header><div class="hrow"><div class="hrow" style="justify-content:flex-start"><div class="logo"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5.5C9 3.5 5.5 3.5 3 4.5v15c3-1 6-1 9 1 3-2 6-2 9-1v-15c-2.5-1-6-1-9 1Z"/><path d="M12 5.5v15"/></svg></div><div><div class="brand">skillyr<span style="color:#b9a0ff">.learn</span></div><div class="sub">Testversion · M01–M09</div></div></div><div class="rightstats"><span title="Lerntage" aria-label="Lerntage"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 10h16m-12 5h3m3 0h2"/></svg> <span id="streak">0</span></span><span title="Erfahrungspunkte" aria-label="Erfahrungspunkte"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m13 2-8 12h6l-1 8 9-12h-6l1-8Z"/></svg> <span id="xp">0</span></span></div></div></header>
 <main class="content" id="content"><div class="eyebrow">Module M01–M09</div><h1 class="title">Dein Lernpfad</h1><p class="body">Die App lädt … Wenn diese Ansicht leer bleibt, öffne sie bitte in einem vollständigen Browser statt in der iPhone-Dateivorschau.</p></main>
@@ -318,6 +323,17 @@ let pendingCompletion=null;
 let current={module:progress.activeModule,page:'path',lesson:defaultLesson(progress.activeModule),reviewScope:'module',step:0,question:0,answer:-1,session:[],sessionCorrect:0,sessionWrong:0,flashIndex:0,flashRevealed:false,cardModule:progress.activeModule,showPractice:false,answeredPractice:false,review:false,coachBusy:false,coachFeedback:null,coachError:'',standaloneFeedback:null};
 const byId=id=>document.getElementById(id);
 const escapeHTML=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function clozeCardHTML(card,revealed){
+ const text=String(card.front||'');let result='',end=0;
+ for(const match of text.matchAll(/\{\{c(\d+)::([\s\S]*?)\}\}/g)){
+  result+=escapeHTML(text.slice(end,match.index));
+  const answer=match[2].split('::')[0].trim();
+  result+=revealed?`<mark class="cloze-fill">${escapeHTML(answer)}</mark>`:`<span class="cloze-gap" aria-label="Lücke ${match[1]}">[…]</span>`;
+  end=match.index+match[0].length;
+ }
+ return result+escapeHTML(text.slice(end));
+}
 
 const coachURL='';
 const coachConfigured=()=>false; // Public release: no remote AI connection.
@@ -539,9 +555,11 @@ function assessFree(understood,mode="self"){
 function cardsHTML(){
  const scope=current.cardModule==='all'?'all':current.module,cs=moduleCards(scope);
  if(current.flashIndex>=cs.length)current.flashIndex=0;const c=cs[current.flashIndex]||null;
+ const cloze=c?.type==='Lückentext'&&/\{\{c\d+::/.test(c.front||'');
+ const text=c?(cloze?clozeCardHTML(c,current.flashRevealed):escapeHTML(current.flashRevealed?c.answer:c.displayFront)):'';
  const example=c?.example&&!current.flashRevealed?`<span class="card-example-label">Eigenes Beispiel</span><pre class="card-example"><code>${escapeHTML(c.example)}</code></pre>`:'';
- const refs=c?.references?.length&&current.flashRevealed?`<details class="card-references"><summary>Quellen und Einordnung</summary><ul>${c.references.map(r=>`<li><a href="${escapeHTML(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(r.title)}</a></li>`).join('')}</ul><p>Eigene Antwort · geprüft am 21.10.2026.</p></details>`:'';
- const card=c?`<div class="cards-meta"><span>Karte ${current.flashIndex+1} / ${cs.length}</span><span>${moduleCode(c.module)} · ${c.kind==='course'?'Kurs #'+c.number:'Übung'}</span></div><button class="card-front ${current.flashRevealed?'card-back':''}" id="flip" aria-pressed="${current.flashRevealed}"><span class="card-kicker">${current.flashRevealed?'Eigene Antwort':c.type==='Lückentext'?'Lücken ergänzen':'Frage'}</span><h2>${escapeHTML(current.flashRevealed?c.answer:c.displayFront)}</h2>${example}<span class="card-flip-hint">${plainIcon('review')} ${current.flashRevealed?'Zur Frage wechseln':'Antwort ansehen'}</span></button>${refs}<div class="buttons cards-actions"><button class="secondary" id="cardPrev" ${current.flashIndex===0?'disabled':''}>Vorherige</button><button class="primary" id="cardNext" ${current.flashIndex===cs.length-1?'disabled':''}>Nächste ${plainIcon('arrow')}</button></div>`:'<div class="empty">In diesem Modul sind keine Lernkarten vorhanden.</div>';
+ const refs=c&&current.flashRevealed&&(cloze||c.references?.length)?`<details class="card-references"><summary>${cloze?'Einordnung (optional)':'Quellen und Einordnung'}</summary>${cloze?`<p class="cloze-context">${escapeHTML(c.answer)}</p>`:''}${c.references?.length?`<ul>${c.references.map(r=>`<li><a href="${escapeHTML(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(r.title)}</a></li>`).join('')}</ul><p>Geprüft am 21.10.2026.</p>`:''}</details>`:'';
+ const card=c?`<div class="cards-meta"><span>Karte ${current.flashIndex+1} / ${cs.length}</span><span>${moduleCode(c.module)} · ${c.kind==='course'?'Kurs #'+c.number:'Übung'}</span></div><button class="card-front ${current.flashRevealed?'card-back':''}" id="flip" aria-pressed="${current.flashRevealed}"><span class="card-kicker">${current.flashRevealed?(cloze?'Ergänzter Text':'Eigene Antwort'):cloze?'Lücken ergänzen':'Frage'}</span><h2>${text}</h2>${example}<span class="card-flip-hint">${plainIcon('review')} ${current.flashRevealed?'Zur Frage wechseln':'Antwort ansehen'}</span></button>${refs}<div class="buttons cards-actions"><button class="secondary" id="cardPrev" ${current.flashIndex===0?'disabled':''}>Vorherige</button><button class="primary" id="cardNext" ${current.flashIndex===cs.length-1?'disabled':''}>Nächste ${plainIcon('arrow')}</button></div>`:'<div class="empty">In diesem Modul sind keine Lernkarten vorhanden.</div>';
  const options=DATA.modules.map(m=>`<option value="${m.id}" ${scope===m.id?'selected':''}>${m.code} · ${escapeHTML(m.title)} · ${moduleCards(m.id).length} Karten</option>`).join('');
  return `<button class="back" data-page="path">${plainIcon('arrow')} Zum Lernpfad</button><div class="eyebrow">${scope==='all'?'M01–M09':moduleCode(scope)} · WIEDERHOLEN</div><h1 class="title">Lernkarten</h1><p class="page-description">Wähle ein Modul. Alle zugehörigen Karten stehen dir direkt zum Lernen zur Verfügung.</p><div class="field-group"><label for="cardModule">Modul</label><select id="cardModule"><option value="all" ${scope==='all'?'selected':''}>Alle Module · ${CARD_CATALOG.length} Karten</option>${options}</select></div>${card}<p class="cards-note">Alle ${CARD_CATALOG.length} Karten sind enthalten: ${DATA.courseCards.length} Kursfragen mit eigenen Antworten und ${DATA.cards.length} zusätzliche Übungskarten.</p>`;
 }

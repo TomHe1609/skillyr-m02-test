@@ -61,3 +61,8 @@ Portal-XP werden nicht importiert. Quizfragen, Freitextaufgaben, vorhandener Ler
 ## Vollständige Modulansicht der Lernkarten
 
 M01: 46 · M02: 133 · M03: 115 · M04: 89 · M05: 72 · M06: 78 · M07: 68 · M08: 64 · M09: 67 Karten. Insgesamt 732 Karten, davon 521 Kursfragen mit eigenen Antworten und 211 zusätzliche Übungskarten. Alle vorhandenen Vorderseiten, Antworten, Lückentexte, eigenen Codebeispiele und Quellen bleiben erhalten. Das Öffnen einer Karte vergibt keine Quiz-XP und schließt keine Lektion ab.
+
+
+## Lückentextdarstellung
+
+Auf der Vorderseite sind ausschließlich die Lücken als farbige Platzhalter markiert. Beim Umdrehen bleibt der Ausgangssatz erhalten; nur die eingesetzten Lösungsbegriffe werden farbig hervorgehoben. Ergänzende selbst formulierte Einordnungen und Quellen stehen getrennt in einem zunächst geschlossenen Bereich. Alle 115 Lückentextkarten mit 410 Lücken bleiben enthalten.
