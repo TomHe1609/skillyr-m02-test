@@ -1,8 +1,8 @@
-# Skillyr Learn – öffentliche Testversion M01 bis M05
+# Skillyr Learn – öffentliche Testversion M01 bis M09
 
 Testseite: https://tomhe1609.github.io/skillyr-m02-test/
 
-Die vorhandene Pages-App wurde im gleichen dunklen Lernpfad-Stil um M01, M03, M04 und M05 erweitert. Das Repository bleibt absichtlich unter seiner bisherigen Adresse erreichbar.
+Alle neun Module sind als eigenständige Test-Lernpfade verfügbar. Die bestehende Startseite mit schlichten Icons, Wellenlinie, Lektionssperren und Modul-Toren bleibt erhalten. Die Modulleiste lässt sich seitlich verschieben.
 
 ## Umfang
 
@@ -13,50 +13,33 @@ Die vorhandene Pages-App wurde im gleichen dunklen Lernpfad-Stil um M01, M03, M0
 | M03 | Entwickeln von Softwarearchitekturen | 11 | 33 | 11 | 33 |
 | M04 | Sicherstellen der Produktqualität | 6 | 18 | 6 | 18 |
 | M05 | Software- und Anwenderdokumentation | 6 | 18 | 6 | 18 |
+| M06 | Übergeben und Einführen des Systems | 6 | 18 | 6 | 18 |
+| M07 | Evaluation als Basis kontinuierlicher Verbesserung | 6 | 18 | 6 | 18 |
+| M08 | Organisatorische und rechtliche Vorgaben | 8 | 24 | 8 | 24 |
+| M09 | Projektunterstützung und -koordination | 8 | 24 | 8 | 24 |
 
-Insgesamt 39 Lektionen, 127 Multiple-Choice-Fragen, 39 Freitextaufgaben und 127 Trainingskarten. M06–M09 sind im aufklappbaren Hinweisbereich sichtbar, aber noch nicht aktiv.
+Insgesamt 67 Lektionen, 211 Multiple-Choice-Fragen, 67 Freitextaufgaben und 211 Trainingskarten. M06–M09 ergänzen 28 kompakte Trainingsabschnitte. M01–M05-Inhalte, Aufgabenkennungen und die bisherigen Datendateien bleiben unverändert.
 
-M01 und M03 folgen den bereits vorliegenden Kurslektionen. M04 und M05 lagen als größere Themenblöcke vor und wurden für diese Testversion jeweils in sechs kompakte Trainingsabschnitte gegliedert. Das ist ein Übungsstand und kein vollständiger Ersatz des Kurses. M02-Inhalte und Aufgabenkennungen bleiben erhalten.
+M01 und M03 folgen den vorhandenen Kurslektionen. M04–M09 wurden aus den vorliegenden größeren Themenblöcken in kurze eigene Trainingseinheiten gegliedert. Die Testfassung dient zum Üben und ersetzt nicht die vollständigen Kursunterlagen. Quellen zur fachlichen Vertiefung stehen in den entsprechenden neuen Lektionen; aktuelle Grundlagen wurden am 21.10.2026 mit offiziellen Quellen abgeglichen.
 
-## Oberfläche
+## Lernen und Freigabe
 
-Die Startseite bündelt Modulauswahl, Lernstand und eine geschwungene Timeline mit kräftigerer Linie und versetzten Stationen. Einheitliche SVG-Linienicons ersetzen die farbigen Symbole in der Kopf- und Fußnavigation. Hinweise und künftige Module stehen im aufklappbaren Bereich „Über diese Testversion“.
+Jedes Modul beginnt mit einer offenen ersten Lektion. Ein gemischtes Quiz mit mindestens 60 % öffnet die direkte Nachfolgerin. Frühere Abschlüsse außerhalb der Reihenfolge und ihre direkte Nachfolgerin bleiben zugänglich. Lernkarten, Praxisaufgaben und Fehlertraining beachten dieselbe Freigabe; vorhandene Daten gesperrter Lektionen bleiben gespeichert.
 
-## Lernen
+Ein neuer Abschluss animiert beim Zurückkehren den erreichten Linienabschnitt einmal. Bei reduzierter Bewegung wird der Zustand ohne Animation angezeigt. Das Tor unter der letzten Lektion öffnet nach Abschluss aller Lektionen den Weg ins nächste Modul. Das Modulziel von M09 führt nach dessen Abschluss zum Gesamtfortschritt, ohne einen nicht vorhandenen M10-Lernpfad anzubieten.
 
-- Erklärungen und Beispiele vor dem gemischten Quiz.
-- Freitext mit Musterlösung und bewusster Selbsteinschätzung; echte KI bleibt deaktiviert.
-- XP für erstmals richtig gelöste Aufgaben, lokaler Lernstand und Lerntage.
-- Eigener Lernpfad und Kartenfilter pro Modul, gemeinsame Fortschrittsübersicht.
-- Fehlertraining pro Modul oder über alle fünf Module.
-- Export/Import des gesamten Lernstands und Offline-Unterstützung nach dem ersten erfolgreichen Laden.
+Multiple Choice wird anhand der hinterlegten Lösung geprüft. Freitext verwendet Musterlösung und bewusste Selbsteinschätzung. Echte KI bleibt deaktiviert; es gibt keine aktivierbare KI-Verbindung und keine Übertragung von Lernantworten an einen Server. Die App ist nach dem ersten erfolgreichen Laden offline nutzbar.
 
-## Lektionsfreigabe und Abschluss
+## Bisherigen Lernstand erhalten
 
-Jedes Modul startet mit einer offenen ersten Lektion. Ein erfolgreiches gemischtes Quiz (mindestens 60 %) öffnet die direkte Nachfolgerin. Abgeschlossene Lektionen bleiben zum Wiederholen offen; frühere Abschlüsse außerhalb der Reihenfolge und deren direkte Nachfolger bleiben erhalten. Lernkarten, Praxisaufgaben und Fehlertraining beachten dieselbe Freigabe. Bereits gespeicherte Antworten und offene Fehler gesperrter Lektionen bleiben erhalten.
+Die App behält aus Kompatibilitätsgründen den vorhandenen lokalen Schlüssel `skillyr_learn_m01_m05_preview_v1` bei. Alle neuen Module werden in denselben Lernstand aufgenommen. Bisherige M01–M05-Stände bleiben direkt nutzbar. Beim ersten Start ohne diesen Eintrag wird ein gültiger alter M02-Stand aus `skillyr_learn_m02_preview_v1` übernommen; der alte Eintrag wird weder geändert noch gelöscht.
 
-Nach einem neuen Abschluss wird beim Zurückkehren zum Lernpfad der erreichte Linienabschnitt einmal ausgefüllt und die nächste Station hervorgehoben. Die Ansicht springt zum erreichten Abschnitt. Wiederholungen lösen keine neue Freischaltanimation aus. Bei reduzierter Bewegung wird der neue Zustand ohne Animation angezeigt. Freigaben werden aus dem gespeicherten Lernstand abgeleitet und bleiben nach Laden, Import und Offline-Nutzung konsistent.
+Neue Exporte tragen die Kennung `skillyr-learn-m01-m09` (Schema 3). Bisherige M01–M05- und M02-Exporte werden weiterhin angenommen. Ein Import ersetzt nach ausdrücklicher Bestätigung den gesamten aktuellen Lernstand. Sicherungen können eigene Freitexte enthalten. Andere Geräte und Browser haben eigene lokale Lernstände.
 
-## Bisherigen M02-Fortschritt erhalten
+## Öffentliche Inhalte und Betrieb
 
-Die neue App verwendet `skillyr_learn_m01_m05_preview_v1`. Beim ersten Start wird ein gültiger bisheriger Stand aus `skillyr_learn_m02_preview_v1` automatisch übernommen. Der alte Eintrag wird dabei weder geändert noch gelöscht. Ein vorhandener neuer Lernstand wird nicht überschrieben.
+Grundlage sind die bereits betrachteten Kursthemen und eigenständig formulierte Erklärungen, Beispiele und Aufgaben. Originale Skillyr-Lernkarten, Kursfolien, private Entwicklungsdateien und API-Schlüssel werden nicht veröffentlicht. Das Angebot ist unabhängig und enthält keine offiziellen Prüfungsaufgaben. Quellenlinks werden erst beim bewussten Öffnen einer externen Seite aufgerufen.
 
-Neue Exporte tragen die App-Kennung `skillyr-learn-m01-m05`; bisherige M02-Exporte mit `skillyr-learn-m02` werden ebenfalls angenommen. Ein Import ersetzt nach ausdrücklicher Bestätigung den ganzen aktuellen Lernstand. Die Sicherung kann eigene Freitexte enthalten. Andere Browser oder Geräte haben getrennte Lernstände.
+GitHub Pages verwendet `main` und `/(root)` im Repository `TomHe1609/skillyr-m02-test`. `index.html` enthält sämtliche App-Daten; `data-m01-m09.json` stellt denselben öffentlichen Inhalt separat bereit. Die bisherigen Dateien `data-m01-m05.json` und `data-m02.json` bleiben unverändert als Kompatibilitätsdateien erhalten.
 
-## Quellen und Grenzen
-
-Grundlage sind die bereits vorliegenden Kursthemen, die öffentliche M02-Paketfassung und die zuvor neu formulierten Übungsfragen. Zusätzliche Erklärungen und Übungen für M04/M05 wurden eigenständig erstellt. Originale Lernkarten, Kursfolien, private Entwicklungsdateien und API-Schlüssel sind nicht Teil dieser Veröffentlichung. Es handelt sich um ein eigenständiges, inoffizielles Lernangebot und keine offiziellen Prüfungsfragen.
-
-Die App führt keine KI-Aufrufe aus und enthält keine aktivierbare KI-Verbindung. Eine spätere Anbindung setzt einen geeigneten sicheren Server voraus. Die App sendet keine Lernantworten an einen Server; beim Seitenaufruf fallen die üblichen Verbindungsdaten des Hosting-Anbieters an.
-
-## Veröffentlichung und Isolation
-
-GitHub Pages: `main` und `/(root)` im Repository `TomHe1609/skillyr-m02-test`.
-
-`index.html` enthält die eingebetteten App-Daten; `data-m01-m05.json` stellt denselben öffentlichen Inhalt separat bereit. Die bisherige `data-m02.json` bleibt unverändert als Kompatibilitätsdatei erhalten. Der Service Worker speichert nur Dateien dieser Test-App und entfernt ausschließlich ältere Caches mit dem Präfix `skillyr-m02-test::`.
-
-`TomHe1609/It-lernquiz`, dessen Pages-Konfiguration, lokale Speicher und Offline-Caches werden nicht verändert.
-
-## Tor zum nächsten Modul
-
-Unter der letzten Lektion steht ein Modul-Tor. Nach Abschluss aller Lektionen des aktuellen Moduls führt es zum nächsten vorhandenen Testmodul und behält den Lernstand bei. Das Tor zu M06 bleibt geschlossen, da M06 noch nicht in der Testversion enthalten ist. Die bestehende Modulauswahl und der übrige Aufbau der Startseite bleiben unverändert.
+Der Service Worker erfasst nur Dateien dieser Test-App und löscht ausschließlich ältere eigene Caches mit dem Präfix `skillyr-m02-test::`. Das Repository `TomHe1609/It-lernquiz`, dessen GitHub Pages sowie seine lokalen Speicher und Offline-Caches bleiben unverändert. Beim Seitenaufruf fallen die üblichen Verbindungsdaten des Hosting-Anbieters an.
