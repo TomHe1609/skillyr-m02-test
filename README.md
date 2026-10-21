@@ -66,3 +66,8 @@ M01: 46 · M02: 133 · M03: 115 · M04: 89 · M05: 72 · M06: 78 · M07: 68 · M
 ## Lückentextdarstellung
 
 Auf der Vorderseite sind ausschließlich die Lücken als farbige Platzhalter markiert. Beim Umdrehen bleibt der Ausgangssatz erhalten; nur die eingesetzten Lösungsbegriffe werden farbig hervorgehoben. Ergänzende selbst formulierte Einordnungen und Quellen stehen getrennt in einem zunächst geschlossenen Bereich. Alle 115 Lückentextkarten mit 410 Lücken bleiben enthalten.
+
+
+## Farbauswahl
+
+Das Palettensymbol in der Kopfzeile und im Quiz öffnet vier Farbwelten: Lila, Petrol & Mint, Nachtblau & Hellblau und Graphit & Apricot. Die Auswahl verändert die Farben der gesamten Oberfläche und wird getrennt vom Lernstand unter `skillyr_learn_theme_v1` gespeichert. Sie bleibt nach Neuladen und offline erhalten und wird zwischen geöffneten App-Tabs synchronisiert. Lila ist die Vorgabe ohne gespeicherte Auswahl. Ein Farbwechsel verändert weder die laufende Aufgabe noch den Lernstand.
