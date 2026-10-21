@@ -6,19 +6,19 @@ Alle neun Module sind als eigenständige Test-Lernpfade verfügbar. Die bestehen
 
 ## Umfang
 
-| Modul | Themen | Lektionen | Multiple Choice | Freitext | Trainingskarten |
-|---|---|---:|---:|---:|---:|
-| M01 | Lern- und Arbeitsmethodik | 3 | 9 | 3 | 9 |
-| M02 | Analysieren und Planen der Softwarearchitektur | 13 | 49 | 13 | 49 |
-| M03 | Entwickeln von Softwarearchitekturen | 11 | 33 | 11 | 33 |
-| M04 | Sicherstellen der Produktqualität | 6 | 18 | 6 | 18 |
-| M05 | Software- und Anwenderdokumentation | 6 | 18 | 6 | 18 |
-| M06 | Übergeben und Einführen des Systems | 6 | 18 | 6 | 18 |
-| M07 | Evaluation als Basis kontinuierlicher Verbesserung | 6 | 18 | 6 | 18 |
-| M08 | Organisatorische und rechtliche Vorgaben | 8 | 24 | 8 | 24 |
-| M09 | Projektunterstützung und -koordination | 8 | 24 | 8 | 24 |
+| Modul | Themen | Lektionen | Multiple Choice | Freitext | Zusätzliche Übungskarten | Kursfragen mit eigenen Antworten |
+|---|---|---:|---:|---:|---:|---:|
+| M01 | Lern- und Arbeitsmethodik | 3 | 9 | 3 | 9 | 37 |
+| M02 | Analysieren und Planen der Softwarearchitektur | 13 | 49 | 13 | 49 | 84 |
+| M03 | Entwickeln von Softwarearchitekturen | 11 | 33 | 11 | 33 | 82 |
+| M04 | Sicherstellen der Produktqualität | 6 | 18 | 6 | 18 | 71 |
+| M05 | Software- und Anwenderdokumentation | 6 | 18 | 6 | 18 | 54 |
+| M06 | Übergeben und Einführen des Systems | 6 | 18 | 6 | 18 | 60 |
+| M07 | Evaluation als Basis kontinuierlicher Verbesserung | 6 | 18 | 6 | 18 | 50 |
+| M08 | Organisatorische und rechtliche Vorgaben | 8 | 24 | 8 | 24 | 40 |
+| M09 | Projektunterstützung und -koordination | 8 | 24 | 8 | 24 | 43 |
 
-Insgesamt 67 Lektionen, 211 Multiple-Choice-Fragen, 67 Freitextaufgaben und 211 Trainingskarten. M06–M09 ergänzen 28 kompakte Trainingsabschnitte. M01–M05-Inhalte, Aufgabenkennungen und die bisherigen Datendateien bleiben unverändert.
+Insgesamt 67 Lektionen, 211 Multiple-Choice-Fragen, 67 Freitextaufgaben, 211 zusätzliche Übungskarten und 521 Kursfragen mit eigenen Antworten. M06–M09 ergänzen 28 kompakte Trainingsabschnitte. Bestehende Lektionen, Quizfragen, Aufgabenkennungen und die Kompatibilitätsdateien M01–M05/M02 bleiben erhalten.
 
 M01 und M03 folgen den vorhandenen Kurslektionen. M04–M09 wurden aus den vorliegenden größeren Themenblöcken in kurze eigene Trainingseinheiten gegliedert. Die Testfassung dient zum Üben und ersetzt nicht die vollständigen Kursunterlagen. Quellen zur fachlichen Vertiefung stehen in den entsprechenden neuen Lektionen; aktuelle Grundlagen wurden am 21.10.2026 mit offiziellen Quellen abgeglichen.
 
@@ -38,7 +38,7 @@ Neue Exporte tragen die Kennung `skillyr-learn-m01-m09` (Schema 3). Bisherige M0
 
 ## Öffentliche Inhalte und Betrieb
 
-Grundlage sind die bereits betrachteten Kursthemen und eigenständig formulierte Erklärungen, Beispiele und Aufgaben. Originale Skillyr-Lernkarten, Kursfolien, private Entwicklungsdateien und API-Schlüssel werden nicht veröffentlicht. Das Angebot ist unabhängig und enthält keine offiziellen Prüfungsaufgaben. Quellenlinks werden erst beim bewussten Öffnen einer externen Seite aufgerufen.
+Grundlage sind die bereitgestellten Skillyr-Kartenfragen mit vom Nutzer bestätigten Veröffentlichungsrechten sowie eigenständig formulierte Erklärungen, Antworten, Beispiele und Aufgaben. Original-Rückseiten, Kursfolien, private Entwicklungsdateien und API-Schlüssel werden nicht veröffentlicht. Das Angebot ist unabhängig und enthält keine offiziellen Musterlösungen oder Prüfungsaufgaben. Quellenlinks werden erst beim bewussten Öffnen einer externen Seite aufgerufen.
 
 GitHub Pages verwendet `main` und `/(root)` im Repository `TomHe1609/skillyr-m02-test`. `index.html` enthält sämtliche App-Daten; `data-m01-m09.json` stellt denselben öffentlichen Inhalt separat bereit. Die bisherigen Dateien `data-m01-m05.json` und `data-m02.json` bleiben unverändert als Kompatibilitätsdateien erhalten.
 
@@ -47,3 +47,12 @@ Der Service Worker erfasst nur Dateien dieser Test-App und löscht ausschließli
 ## Einheitliche Lernansichten
 
 Lernkarten, Fehlertraining, Fortschritt, Erklärungen, Praxisaufgaben und Quiz verwenden die ruhige Gestaltung der Startseite mit flachen Flächen und schlichten Linienicons. Die Lernstandsicherung und der Import stehen unter „Fortschritt sichern und verwalten“. Startseite, Inhalte, Freischaltungen, Bewertung und lokale Speicherung bleiben erhalten.
+
+
+## Kursfragen mit eigenen Antworten
+
+Ergänzend zu den bisherigen 211 Übungskarten enthält die App die 521 bereitgestellten Skillyr-Kartenfragen aus M01–M09 mit neu formulierten Antworten. Die Veröffentlichung der Fragen wurde vom Nutzer als rechtegedeckt bestätigt. Es wurden keine Original-Rückseiten aus dem Portal übernommen. Die Kartensätze lassen sich im Bereich Lernkarten wechseln; beide verwenden die bestehenden Lektionsfreigaben.
+
+Lückentextlösungen bleiben auf der Vorderseite verborgen. Zu den 16 Codekarten wurden ausdrücklich als eigene Beispiele bezeichnete Aufgaben ergänzt, weil die bereitgestellte Übersicht keinen Original-Code enthielt. Versionsabhängige Normen, pauschale Prozentangaben und rechtliche Verkürzungen werden in den Antworten eingeordnet; relevante Primärquellen stehen an der jeweiligen Karte. Die Antworten sind Lernhilfen, keine offiziellen Musterlösungen.
+
+Portal-XP werden nicht importiert. Quizfragen, Freitextaufgaben, vorhandener Lernstand und Bewertungsregeln bleiben unverändert. Die echte KI-Anbindung bleibt deaktiviert.
