@@ -1,0 +1,1799 @@
+{
+  "title": "Skillyr Learn",
+  "module": "M02",
+  "moduleTitle": "Analysieren und Planen der Softwarearchitektur",
+  "module_count": 9,
+  "lessons": [
+    {
+      "id": "2.0",
+      "title": "Euer Praxisbetrieb: Mittelland Logistik",
+      "minutes": 30,
+      "slide_count": 5,
+      "concepts": [
+        {
+          "title": "Der Praxisfall",
+          "body": "Mittelland Logistik modernisiert die Lagerprozesse. Das bisherige System PALOS soll durch „Lagerkompass“ ersetzt werden.",
+          "example": "Ein gemeinsamer Fall hilft, Anforderungen und Architekturentscheidungen an einer realistischen Situation durchzuspielen."
+        },
+        {
+          "title": "Das Problem",
+          "body": "Papierlisten und ein nächtlicher Datenabgleich führen dazu, dass Bestände nicht immer aktuell sind.",
+          "example": "Eine geeignete Lösung erfasst Wareneingänge nachvollziehbar und stellt Änderungen rechtzeitig bereit."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-017",
+          "module": 2,
+          "lesson_id": "2.0",
+          "lesson_title": "Euer Praxisbetrieb: Mittelland Logistik",
+          "type": "single_choice",
+          "question": "Welches Altsystem wird im durchgängigen Kursfall abgelöst?",
+          "options": [
+            "GitHub Actions",
+            "PALOS",
+            "Lagerkompass",
+            "OpenAPI"
+          ],
+          "correct_index": 1,
+          "explanation": "PALOS bildet den Ausgangszustand; Lagerkompass ist das neue Projekt.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-018",
+          "module": 2,
+          "lesson_id": "2.0",
+          "lesson_title": "Euer Praxisbetrieb: Mittelland Logistik",
+          "type": "single_choice",
+          "question": "Welche Person kennt als Key-Userin die Lagerabläufe besonders gut?",
+          "options": [
+            "Tobias Lehmann",
+            "Mara Ionescu",
+            "Heike Schulz",
+            "Sabine Roth"
+          ],
+          "correct_index": 2,
+          "explanation": "Heike Schulz ist Lagerleiterin und fachliche Ansprechpartnerin für die tatsächlichen Abläufe.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-019",
+          "module": 2,
+          "lesson_id": "2.0",
+          "lesson_title": "Euer Praxisbetrieb: Mittelland Logistik",
+          "type": "single_choice",
+          "question": "Warum ist ein nächtlicher Batch-Abgleich für aktuelle Bestände problematisch?",
+          "options": [
+            "Er verhindert jede Speicherung",
+            "Er macht Daten automatisch anonym",
+            "Änderungen sind zwischen den Abgleichen nicht überall aktuell",
+            "Er ersetzt alle Schnittstellen"
+          ],
+          "correct_index": 2,
+          "explanation": "Die verzögerte Synchronisation kann veraltete Bestandsinformationen verursachen.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-020",
+          "module": 2,
+          "lesson_id": "2.0",
+          "lesson_title": "Euer Praxisbetrieb: Mittelland Logistik",
+          "type": "practice",
+          "question": "Leite aus Papier-Picklisten und nächtlichem Abgleich zwei Probleme und passende Projektziele ab.",
+          "model_answer": "Papier führt zu Medienbrüchen und verzögerter Erfassung: Ziel ist digitale Erfassung am Arbeitsort. Der nächtliche Abgleich liefert veraltete Bestände: Ziel ist zeitnahe, nachvollziehbare Synchronisation mit definiertem Umgang bei Verbindungsproblemen.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.1",
+      "title": "Kundenbedarfe und Zielgruppen",
+      "minutes": 180,
+      "slide_count": 15,
+      "concepts": [
+        {
+          "title": "Bedarf oder Wunsch?",
+          "body": "Ein Bedarf beschreibt ein Problem oder ein Ziel. Ein Wunsch nennt bereits eine mögliche Lösung.",
+          "example": "„Wir benötigen aktuelle Bestände“ ist ein Bedarf. „Wir wollen unbedingt eine bestimmte App“ ist ein Wunsch."
+        },
+        {
+          "title": "Stakeholder",
+          "body": "Stakeholder sind Personen oder Gruppen, die vom Projekt betroffen sind oder es beeinflussen.",
+          "example": "Im Lager zählen dazu unter anderem die Lagerleitung, Mitarbeitende, die IT und die Geschäftsführung."
+        },
+        {
+          "title": "Personas",
+          "body": "Eine Persona fasst typische Merkmale und Bedürfnisse einer Nutzergruppe zusammen. Sie sollte auf Beobachtungen oder Daten beruhen.",
+          "example": "Beispiel: Eine Mitarbeiterin scannt Waren mit Handschuhen und braucht große Schaltflächen."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-021",
+          "module": 2,
+          "lesson_id": "2.1",
+          "lesson_title": "Kundenbedarfe und Zielgruppen",
+          "type": "single_choice",
+          "question": "Was unterscheidet einen Bedarf von einem Lösungswunsch?",
+          "options": [
+            "Der Bedarf beschreibt das zugrunde liegende Problem oder Ziel",
+            "Der Bedarf enthält immer eine fertige Technologieauswahl",
+            "Ein Wunsch ist stets rechtlich verbindlich",
+            "Ein Bedarf darf nicht hinterfragt werden"
+          ],
+          "correct_index": 0,
+          "explanation": "Der Wunsch nach einer bestimmten App kann beispielsweise auf dem Bedarf nach weniger Erfassungsfehlern beruhen.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-022",
+          "module": 2,
+          "lesson_id": "2.1",
+          "lesson_title": "Kundenbedarfe und Zielgruppen",
+          "type": "single_choice",
+          "question": "Wer zählt als Stakeholder eines Softwareprojekts?",
+          "options": [
+            "Nur Mitglieder der Geschäftsführung",
+            "Nur zahlende Kunden",
+            "Nur die Entwickler",
+            "Eine Person oder Gruppe, die das Projekt beeinflusst oder davon betroffen ist"
+          ],
+          "correct_index": 3,
+          "explanation": "Auch Anwender, Betrieb, Datenschutz und angrenzende Fachbereiche können beteiligt sein.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-023",
+          "module": 2,
+          "lesson_id": "2.1",
+          "lesson_title": "Kundenbedarfe und Zielgruppen",
+          "type": "single_choice",
+          "question": "Was beschreibt eine Persona?",
+          "options": [
+            "Ein auf Erkenntnissen beruhendes Beispiel einer Nutzergruppe",
+            "Die vollständige Liste aller Kunden",
+            "Eine technische Datenbanktabelle",
+            "Eine beliebige Wunschperson ohne Recherche"
+          ],
+          "correct_index": 0,
+          "explanation": "Personas machen Ziele, Arbeitsumfeld und Schwierigkeiten typischer Nutzer greifbar.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-024",
+          "module": 2,
+          "lesson_id": "2.1",
+          "lesson_title": "Kundenbedarfe und Zielgruppen",
+          "type": "practice",
+          "question": "Entwirf eine Persona für eine Person, die Wareneingänge per Scanner erfasst.",
+          "model_answer": "Rolle und Arbeitsumfeld beschreiben; Ziel ist schnelle, korrekte Erfassung. Typische Hürden sind Handschuhe, Lärm und schwache Verbindung. Daraus folgen große Bedienelemente, eindeutige Rückmeldungen und ein abgestimmter Offlineablauf.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.2",
+      "title": "Anforderungsermittlung",
+      "minutes": 180,
+      "slide_count": 21,
+      "concepts": [
+        {
+          "title": "IST-Analyse",
+          "body": "Bevor du eine Lösung planst, musst du verstehen, wie die Arbeit aktuell abläuft und wo Probleme entstehen.",
+          "example": "Begleite eine Wareneingangsbuchung vom Lieferschein bis zur Bestandsänderung."
+        },
+        {
+          "title": "Anforderungen ermitteln",
+          "body": "Interviews, Beobachtung, Workshops und Dokumentenanalyse ergänzen sich. Menschen berichten nicht immer alles, was sie tatsächlich tun.",
+          "example": "Im Interview erfährst du Wünsche. Durch Beobachtung siehst du auch unbeabsichtigte Umwege."
+        },
+        {
+          "title": "Messbar formulieren",
+          "body": "Funktional bedeutet: Was soll das System tun? Nicht-funktional: Wie gut oder unter welchen Bedingungen?",
+          "example": "„Lieferung erfassen“ ist funktional. „Antwort unter zwei Sekunden“ ist nicht-funktional."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-025",
+          "module": 2,
+          "lesson_id": "2.2",
+          "lesson_title": "Anforderungsermittlung",
+          "type": "single_choice",
+          "question": "Welche Methode zeigt besonders gut den tatsächlichen Arbeitsablauf?",
+          "options": [
+            "Ausschließlich eine Produktwerbung lesen",
+            "Nur die Projektfarbe abstimmen",
+            "Beobachtung am Arbeitsplatz",
+            "Eine Datenbank ohne Nutzerkontakt auswählen"
+          ],
+          "correct_index": 2,
+          "explanation": "Beobachtung macht Medienbrüche, Umwege und implizites Wissen sichtbar.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-026",
+          "module": 2,
+          "lesson_id": "2.2",
+          "lesson_title": "Anforderungsermittlung",
+          "type": "single_choice",
+          "question": "Welche Aussage ist eine funktionale Anforderung?",
+          "options": [
+            "Die Anwendung soll eine festgelegte Verfügbarkeit erreichen",
+            "Das System muss eine Lieferung erfassen können",
+            "Das System muss unter einer vorgegebenen Laufzeitumgebung betrieben werden",
+            "Die Antwortzeit muss unter einer definierten Grenze liegen"
+          ],
+          "correct_index": 1,
+          "explanation": "Funktionale Anforderungen beschreiben eine Fähigkeit des Systems.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-027",
+          "module": 2,
+          "lesson_id": "2.2",
+          "lesson_title": "Anforderungsermittlung",
+          "type": "single_choice",
+          "question": "Welche Formulierung ist am besten überprüfbar?",
+          "options": [
+            "Die Oberfläche muss modern wirken",
+            "Die Datenbank sollte ziemlich gut sein",
+            "95 Prozent der Bestandsabfragen antworten unter definierter Testlast innerhalb von zwei Sekunden",
+            "Die Anwendung soll sehr schnell sein"
+          ],
+          "correct_index": 2,
+          "explanation": "Messgröße, Grenzwert und Bedingungen ermöglichen eine objektive Prüfung.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-028",
+          "module": 2,
+          "lesson_id": "2.2",
+          "lesson_title": "Anforderungsermittlung",
+          "type": "practice",
+          "question": "Formuliere drei offene Fragen zur Ermittlung von Anforderungen an den Wareneingang.",
+          "model_answer": "Wie erfassen Sie eine Lieferung heute Schritt für Schritt? Welche Fehler oder Unterbrechungen treten dabei auf? Was müssen Sie tun, wenn die tatsächliche Menge von der Bestellung abweicht? Antworten nachfragen und beobachtete Probleme dokumentieren.",
+          "max_points": 3,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.3",
+      "title": "Anforderungsdokumentation",
+      "minutes": 180,
+      "slide_count": 28,
+      "concepts": [
+        {
+          "title": "Lastenheft und Pflichtenheft",
+          "body": "Im Lastenheft beschreibt der Auftraggeber Anforderungen und Ziele. Das Pflichtenheft erläutert, wie der Auftragnehmer diese erfüllen will.",
+          "example": "Lastenheft: „Mengenabweichungen müssen meldbar sein.“ Pflichtenheft: „Eine Maske erfasst Abweichung und Kommentar.“"
+        },
+        {
+          "title": "User Stories",
+          "body": "Eine User Story verbindet Rolle, gewünschte Funktion und Nutzen.",
+          "example": "„Als Lagerkraft möchte ich beschädigte Ware melden, damit die Buchhaltung informiert ist.“"
+        },
+        {
+          "title": "Akzeptanzkriterien",
+          "body": "Eine gute Anforderung ist eindeutig und überprüfbar. Akzeptanzkriterien zeigen, woran das Ergebnis gemessen wird.",
+          "example": "„Wenn Menge und Artikel fehlen, verhindert das System das Speichern und erklärt warum.“"
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-029",
+          "module": 2,
+          "lesson_id": "2.3",
+          "lesson_title": "Anforderungsdokumentation",
+          "type": "single_choice",
+          "question": "Wer beschreibt im klassischen Lastenheft vor allem die Anforderungen?",
+          "options": [
+            "Der Auftraggeber",
+            "Ein Compiler",
+            "Immer der Endanwender allein",
+            "Ausschließlich der Datenbankadministrator"
+          ],
+          "correct_index": 0,
+          "explanation": "Das Lastenheft beschreibt aus Auftraggebersicht, was erreicht werden soll.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-030",
+          "module": 2,
+          "lesson_id": "2.3",
+          "lesson_title": "Anforderungsdokumentation",
+          "type": "single_choice",
+          "question": "Welche Form folgt einer typischen User Story?",
+          "options": [
+            "Wenn Tabelle, dann Compiler, sonst Server",
+            "Als Rolle möchte ich Funktion, damit Nutzen",
+            "Version, Lizenz, Buildnummer",
+            "Vorher Code, nachher Test, ohne Nutzer"
+          ],
+          "correct_index": 1,
+          "explanation": "Die Story verknüpft Nutzerrolle, gewünschte Fähigkeit und Nutzen.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-031",
+          "module": 2,
+          "lesson_id": "2.3",
+          "lesson_title": "Anforderungsdokumentation",
+          "type": "single_choice",
+          "question": "Was ist der Zweck von Traceability?",
+          "options": [
+            "Alle Anforderungen ohne Kennung speichern",
+            "Testfälle von Anforderungen trennen",
+            "Anforderungen mit Umsetzung und Nachweisen verknüpfen",
+            "Nur die Dateigröße messen"
+          ],
+          "correct_index": 2,
+          "explanation": "Verknüpfungen unterstützen Änderungsfolgenanalyse und den Nachweis der Erfüllung.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-032",
+          "module": 2,
+          "lesson_id": "2.3",
+          "lesson_title": "Anforderungsdokumentation",
+          "type": "practice",
+          "question": "Schreibe eine User Story für die Meldung einer Mengenabweichung und zwei prüfbare Akzeptanzkriterien.",
+          "model_answer": "Als Lagerkraft möchte ich eine Abweichung erfassen, damit falsche Bestände vermieden werden. Kriterium 1: Eine positive Menge mit Begründung wird gespeichert und bestätigt. Kriterium 2: Eine ungültige Menge wird mit verständlicher Fehlermeldung abgewiesen und verändert keinen Bestand.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.4",
+      "title": "Anforderungsbewertung und Priorisierung",
+      "minutes": 180,
+      "slide_count": 22,
+      "concepts": [
+        {
+          "title": "MoSCoW",
+          "body": "Mit Must, Should, Could und Won’t this time teilst du Anforderungen nach ihrer Wichtigkeit für den aktuellen Umfang ein.",
+          "example": "Bestände korrekt buchen könnte Must sein; ein animiertes Dashboard eher Could."
+        },
+        {
+          "title": "Kano-Modell",
+          "body": "Basismerkmale werden erwartet, Leistungsmerkmale steigern mit besserer Ausprägung die Zufriedenheit und Begeisterungsmerkmale überraschen positiv.",
+          "example": "Eine korrekte Buchung ist Basis; schnellere Suche kann die Zufriedenheit steigern."
+        },
+        {
+          "title": "Nutzwertanalyse",
+          "body": "Du gewichtest Kriterien, bewertest Alternativen und addierst die gewichteten Punkte. Die Gewichte müssen begründet sein.",
+          "example": "Bedienbarkeit zählt bei Lager-Scannern vielleicht mehr als hübsche Animationen."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-033",
+          "module": 2,
+          "lesson_id": "2.4",
+          "lesson_title": "Anforderungsbewertung und Priorisierung",
+          "type": "single_choice",
+          "question": "Was bedeutet Won't Have this time?",
+          "options": [
+            "Für alle Zeiten technisch unmöglich",
+            "Unbedingt vor allen Must-Haves umzusetzen",
+            "Bewusst außerhalb des aktuellen Umfangs",
+            "Eine Anforderung ohne Entscheidung"
+          ],
+          "correct_index": 2,
+          "explanation": "Won't beschreibt eine Entscheidung für den betrachteten Zeitraum oder Release.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-034",
+          "module": 2,
+          "lesson_id": "2.4",
+          "lesson_title": "Anforderungsbewertung und Priorisierung",
+          "type": "single_choice",
+          "question": "Was kennzeichnet ein Basismerkmal im Kano-Modell?",
+          "options": [
+            "Fehlen erzeugt Unzufriedenheit, Erfüllung wird erwartet",
+            "Mehr Erfüllung steigert immer proportional die Begeisterung",
+            "Es darf nur von Entwicklern vorgeschlagen werden",
+            "Es ist stets ein unwichtiger Zusatz"
+          ],
+          "correct_index": 0,
+          "explanation": "Basismerkmale werden häufig als selbstverständlich vorausgesetzt.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-035",
+          "module": 2,
+          "lesson_id": "2.4",
+          "lesson_title": "Anforderungsbewertung und Priorisierung",
+          "type": "single_choice",
+          "question": "Wie entsteht ein gewichteter Gesamtnutzwert?",
+          "options": [
+            "Alle Preise unabhängig vom Nutzen addieren",
+            "Bewertungen je Kriterium mit den Gewichten multiplizieren und summieren",
+            "Nur das größte Einzelgewicht auswählen",
+            "Gewichte ohne Bewertungen summieren"
+          ],
+          "correct_index": 1,
+          "explanation": "Vorab definierte Kriterien und eine konsistente Skala machen die Auswahl nachvollziehbar.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-036",
+          "module": 2,
+          "lesson_id": "2.4",
+          "lesson_title": "Anforderungsbewertung und Priorisierung",
+          "type": "practice",
+          "question": "Bewerte A und B: Kosten 40 Prozent, Bedienbarkeit 60 Prozent. A erhält 4 und 2 Punkte, B erhält 2 und 4 Punkte. Welche Alternative gewinnt?",
+          "model_answer": "A: 0,4 mal 4 plus 0,6 mal 2 = 2,8. B: 0,4 mal 2 plus 0,6 mal 4 = 3,2. B gewinnt unter dieser Gewichtung. Die Skala muss so definiert sein, dass mehr Punkte jeweils besser sind.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.5",
+      "title": "Softwareauswahl und Innovationen",
+      "minutes": 180,
+      "slide_count": 23,
+      "concepts": [
+        {
+          "title": "Kaufen oder entwickeln?",
+          "body": "Standardsoftware ist schnell verfügbar, kann aber Anpassungen erfordern. Individualsoftware passt genauer, kostet jedoch Entwicklung und Pflege.",
+          "example": "Prüfe zuerst, welche Funktionen am Markt bereits passend angeboten werden."
+        },
+        {
+          "title": "TCO statt Kaufpreis",
+          "body": "Total Cost of Ownership betrachtet alle Lebenszykluskosten: Anschaffung, Einführung, Betrieb, Änderungen und Wartung.",
+          "example": "Ein günstiger Kaufpreis kann durch teure Anpassungen überholt werden."
+        },
+        {
+          "title": "Machbarkeit prüfen",
+          "body": "Ein Proof of Concept (PoC) testet eine kritische technische Annahme. Ein MVP testet eine Produktidee mit minimalem Funktionsumfang.",
+          "example": "Vor der Plattformentscheidung kann ein Scanner-Test die Offlinefähigkeit zeigen."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-037",
+          "module": 2,
+          "lesson_id": "2.5",
+          "lesson_title": "Softwareauswahl und Innovationen",
+          "type": "single_choice",
+          "question": "Welche Kosten gehören zur TCO-Betrachtung?",
+          "options": [
+            "Nur der Kaufpreis",
+            "Nur Kosten vor Vertragsabschluss",
+            "Nur Stromkosten",
+            "Anschaffung, Einführung, Betrieb, Wartung und weitere Lebenszykluskosten"
+          ],
+          "correct_index": 3,
+          "explanation": "Eine günstige Anschaffung kann durch hohen Betriebs- oder Anpassungsaufwand teuer werden.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-038",
+          "module": 2,
+          "lesson_id": "2.5",
+          "lesson_title": "Softwareauswahl und Innovationen",
+          "type": "single_choice",
+          "question": "Welches Ziel hat ein Proof of Concept vor allem?",
+          "options": [
+            "Alle Schulungen ersetzen",
+            "Die endgültige Abnahme durchführen",
+            "Eine technische Machbarkeit prüfen",
+            "Ein vollständiges Produkt im Markt betreiben"
+          ],
+          "correct_index": 2,
+          "explanation": "Ein PoC beantwortet eine begrenzte Machbarkeitsfrage.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-039",
+          "module": 2,
+          "lesson_id": "2.5",
+          "lesson_title": "Softwareauswahl und Innovationen",
+          "type": "single_choice",
+          "question": "Welche Situation spricht eher für eine Eigenentwicklung?",
+          "options": [
+            "Ein Standardprozess mit vielen passenden Angeboten und kaum Budget",
+            "Die Annahme, Wartung koste nichts",
+            "Fehlende Anforderungen und eine zufällige Technologieidee",
+            "Sehr spezifische Kernprozesse, die Standardprodukte schlecht abdecken"
+          ],
+          "correct_index": 3,
+          "explanation": "Die Entscheidung berücksichtigt fachliche Passung, Kosten, Risiken und vorhandene Fähigkeiten.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-040",
+          "module": 2,
+          "lesson_id": "2.5",
+          "lesson_title": "Softwareauswahl und Innovationen",
+          "type": "practice",
+          "question": "Ein Standardprodukt passt zu 90 Prozent der Anforderungen. Welche vier Punkte prüfst du vor einer Kaufempfehlung?",
+          "model_answer": "Bedeutung der fehlenden 10 Prozent; Anpassbarkeit und Schnittstellen; gesamte Lebenszykluskosten; Abhängigkeit vom Anbieter und Datenexport. Kritische Muss-Anforderungen dürfen durch einen hohen Durchschnitt nicht verdeckt werden.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.6",
+      "title": "IST-Aufnahme und Architekturdokumentation mit Arc42",
+      "minutes": 360,
+      "slide_count": 30,
+      "concepts": [
+        {
+          "title": "Die bestehende Architektur verstehen",
+          "body": "Dokumentiere Nutzer, Nachbarsysteme, Schnittstellen, Datenflüsse und technische Risiken der aktuellen Lösung.",
+          "example": "Welche Access-Dateien, Exporte und manuellen Übergaben gibt es bei PALOS?"
+        },
+        {
+          "title": "Architektur aus Sichten",
+          "body": "Kontext-, Baustein-, Laufzeit- und Verteilungssicht beantworten unterschiedliche Fragen. Arc42 hilft, diese einheitlich zu dokumentieren.",
+          "example": "Kontext: Wer nutzt das System? Bausteine: Woraus besteht es?"
+        },
+        {
+          "title": "Entscheidungen begründen",
+          "body": "Ein Architecture Decision Record (ADR) hält Problem, Entscheidung, Alternativen und Konsequenzen fest.",
+          "example": "„Relationale Datenbank gewählt, weil die Beziehungen klar sind und Transaktionen wichtig sind.“"
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-041",
+          "module": 2,
+          "lesson_id": "2.6",
+          "lesson_title": "IST-Aufnahme und Architekturdokumentation mit Arc",
+          "type": "single_choice",
+          "question": "Welche Frage beantwortet die Kontextabgrenzung?",
+          "options": [
+            "Wie teuer jeder einzelne Monitor ist",
+            "Wie jede lokale Variable heißt",
+            "Wann ein Entwickler Urlaub hat",
+            "Welche Nutzer und Nachbarsysteme mit dem System interagieren"
+          ],
+          "correct_index": 3,
+          "explanation": "Die Kontextsicht zeigt die Systemgrenze und externe Beziehungen.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-042",
+          "module": 2,
+          "lesson_id": "2.6",
+          "lesson_title": "IST-Aufnahme und Architekturdokumentation mit Arc",
+          "type": "single_choice",
+          "question": "Was dokumentiert ein Architecture Decision Record?",
+          "options": [
+            "Eine zufällige Liste von Dateien",
+            "Alle Passwörter des Systems",
+            "Eine Architekturentscheidung mit Kontext, Alternativen und Folgen",
+            "Nur die aktuelle Prozessorauslastung"
+          ],
+          "correct_index": 2,
+          "explanation": "Ein ADR macht Gründe und Konsequenzen einer Entscheidung später nachvollziehbar.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-043",
+          "module": 2,
+          "lesson_id": "2.6",
+          "lesson_title": "IST-Aufnahme und Architekturdokumentation mit Arc",
+          "type": "single_choice",
+          "question": "Welche C4-Sicht zeigt Anwendungen und Datenspeicher innerhalb des betrachteten Systems?",
+          "options": [
+            "Eine Netzplantechnik-Sicht",
+            "Ausschließlich die Systemkontext-Sicht",
+            "Nur die Code-Sicht",
+            "Container-Sicht"
+          ],
+          "correct_index": 3,
+          "explanation": "Container bezeichnet im C4-Modell eigenständig ausführbare oder speichernde Einheiten und nicht ausschließlich Docker-Container.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-044",
+          "module": 2,
+          "lesson_id": "2.6",
+          "lesson_title": "IST-Aufnahme und Architekturdokumentation mit Arc",
+          "type": "practice",
+          "question": "Skizziere ein ADR zur Wahl eines relationalen DBMS für Wareneingänge.",
+          "model_answer": "Kontext: Beziehungen, konsistente Buchungen und Abfragen. Entscheidung: ein geeignetes relationales DBMS verwenden. Alternativen: dokumentenorientierte oder dateibasierte Speicherung. Folgen: Constraints und Transaktionen unterstützen Konsistenz; Schemaänderungen und Betrieb benötigen Planung.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.7",
+      "title": "Prototypen und Plattformwahl",
+      "minutes": 180,
+      "slide_count": 26,
+      "concepts": [
+        {
+          "title": "Prototypen zum Lernen",
+          "body": "Ein Prototyp prüft Annahmen früh. Ein Papierentwurf reicht oft, um Bedienabläufe zu testen.",
+          "example": "Zeige einer Lagerkraft einen Scan-Bildschirm und lass sie eine Buchung durchführen."
+        },
+        {
+          "title": "Mit Nutzern testen",
+          "body": "Bei Usability-Tests löst die Testperson reale Aufgaben. Beobachte, wo sie stockt – gib nicht sofort die Lösung vor.",
+          "example": "Wenn der Knopf mit Handschuhen zu klein ist, zeigt sich das oft erst im Test."
+        },
+        {
+          "title": "Plattformwahl",
+          "body": "Wähle Web-, Native- oder hybride Ansätze anhand der Anforderungen: Geräte, Offlinefunktion, Kosten und Betrieb.",
+          "example": "Vorhandene Scanner und Netzlücken sind gewichtige Auswahlkriterien."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-045",
+          "module": 2,
+          "lesson_id": "2.7",
+          "lesson_title": "Prototypen und Plattformwahl",
+          "type": "single_choice",
+          "question": "Was eignet sich zur frühen Prüfung eines Bildschirmablaufs?",
+          "options": [
+            "Erst die vollständig produktive Anwendung",
+            "Ein ausschließliches Datenbankbackup",
+            "Ein fertiger Kaufvertrag",
+            "Ein einfacher Papierprototyp"
+          ],
+          "correct_index": 3,
+          "explanation": "Niedrige Fidelity ermöglicht frühes Feedback bei geringem Änderungsaufwand.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-046",
+          "module": 2,
+          "lesson_id": "2.7",
+          "lesson_title": "Prototypen und Plattformwahl",
+          "type": "single_choice",
+          "question": "Was ist im Usability-Test besonders wichtig?",
+          "options": [
+            "Während jeder Aktion die Lösung vorsagen",
+            "Nur den Quellcode zählen",
+            "Nutzer reale Aufgaben bearbeiten lassen und ihr Verhalten beobachten",
+            "Nur Entwickler nach ihrer Lieblingsfarbe fragen"
+          ],
+          "correct_index": 2,
+          "explanation": "Beobachtet wird, ob Zielnutzer ihre Aufgabe unter passenden Bedingungen bewältigen.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-047",
+          "module": 2,
+          "lesson_id": "2.7",
+          "lesson_title": "Prototypen und Plattformwahl",
+          "type": "single_choice",
+          "question": "Wer betreibt bei SaaS typischerweise die Anwendung?",
+          "options": [
+            "Jeder Nutzer betreibt einen eigenen Compiler",
+            "Niemand ist zuständig",
+            "Der Kunde muss zwingend jede Betriebssystemdatei warten",
+            "Der Anbieter"
+          ],
+          "correct_index": 3,
+          "explanation": "SaaS liefert eine nutzbare Anwendung; der Kunde bleibt für seinen angemessenen Umgang und seine Konfiguration verantwortlich.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-048",
+          "module": 2,
+          "lesson_id": "2.7",
+          "lesson_title": "Prototypen und Plattformwahl",
+          "type": "practice",
+          "question": "Eine Lager-App muss mit vorhandenen Scannern funktionieren und zeitweise offline arbeiten. Nenne vier Auswahlkriterien.",
+          "model_answer": "Geräte- und Betriebssystemunterstützung; Offlineerfassung und Synchronisation; Bedienbarkeit im Lager; Wartungs- und Verteilungsaufwand. Die Kriterien anhand eines Prototyps auf den echten Geräten prüfen.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.8",
+      "title": "Grob- und Fein-Design",
+      "minutes": 360,
+      "slide_count": 34,
+      "concepts": [
+        {
+          "title": "Grob-Design",
+          "body": "Das Grob-Design zeigt große Bausteine, ihre Aufgaben und Verbindungen. Es beantwortet: Was brauchen wir grundsätzlich?",
+          "example": "Scanner-App, API und zentrale Datenbank sind drei mögliche Hauptbausteine."
+        },
+        {
+          "title": "Fein-Design",
+          "body": "Im Fein-Design konkretisierst du Schnittstellen, Klassen, Datenstrukturen und Abläufe.",
+          "example": "Ein Sequenzdiagramm zeigt, was beim Scan zeitlich nacheinander passiert."
+        },
+        {
+          "title": "Klare Verantwortlichkeiten",
+          "body": "Hohe Kohäsion und geringe Kopplung erleichtern Tests und Änderungen. Halte Funktionen möglichst einfach und vermeide unnötige Wiederholungen.",
+          "example": "Die Buchungslogik gehört nicht gleichzeitig in Oberfläche, API und Datenbank-Trigger."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-049",
+          "module": 2,
+          "lesson_id": "2.8",
+          "lesson_title": "Grob- und Fein-Design",
+          "type": "single_choice",
+          "question": "Was gehört typischerweise zum Grob-Design?",
+          "options": [
+            "Jede einzelne lokale Variable",
+            "Hauptkomponenten und ihre Verantwortlichkeiten",
+            "Nur die endgültige Release-Nummer",
+            "Jeder Testdatenwert"
+          ],
+          "correct_index": 1,
+          "explanation": "Das Grob-Design beschreibt die Gesamtstruktur; das Fein-Design konkretisiert Details.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-050",
+          "module": 2,
+          "lesson_id": "2.8",
+          "lesson_title": "Grob- und Fein-Design",
+          "type": "single_choice",
+          "question": "Welche Kombination ist als Entwurfsziel meist sinnvoll?",
+          "options": [
+            "Keine klaren Modulverantwortlichkeiten",
+            "Hohe Kohäsion und geringe Kopplung",
+            "Maximale globale Abhängigkeiten",
+            "Geringe Kohäsion und hohe Kopplung"
+          ],
+          "correct_index": 1,
+          "explanation": "Zusammengehöriges liegt im selben Modul, während Abhängigkeiten zwischen Modulen begrenzt werden.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-051",
+          "module": 2,
+          "lesson_id": "2.8",
+          "lesson_title": "Grob- und Fein-Design",
+          "type": "single_choice",
+          "question": "Was zeigt ein Sequenzdiagramm besonders gut?",
+          "options": [
+            "Ausschließlich die Tabellenbezeichnungen",
+            "Die zeitliche Folge von Nachrichten zwischen Beteiligten",
+            "Nur die langfristigen Personalkosten",
+            "Die Projektpriorität ohne Ablauf"
+          ],
+          "correct_index": 1,
+          "explanation": "Es eignet sich beispielsweise zur Darstellung eines API-Aufrufs über Controller, Service und Repository.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-052",
+          "module": 2,
+          "lesson_id": "2.8",
+          "lesson_title": "Grob- und Fein-Design",
+          "type": "practice",
+          "question": "Skizziere drei Komponenten einer Wareneingangs-API und ihren Ablauf.",
+          "model_answer": "Controller nimmt die Anfrage entgegen und prüft das Format; Service prüft fachliche Regeln; Repository liest und speichert Daten innerhalb der vorgesehenen Transaktion. Das Ergebnis wird in einen passenden HTTP-Status und eine Antwort übersetzt.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.9",
+      "title": "Datenbankmodellierung",
+      "minutes": 360,
+      "slide_count": 29,
+      "concepts": [
+        {
+          "title": "Entitäten und Beziehungen",
+          "body": "Ein ER-Diagramm zeigt Entitäten (zum Beispiel Kunde, Bestellung), deren Attribute und Beziehungen.",
+          "example": "Ein Kunde gibt Bestellungen auf. Beide brauchen eine eindeutige Identifikation."
+        },
+        {
+          "title": "Kardinalitäten",
+          "body": "1:1 bedeutet eins zu eins, 1:n eins zu vielen und m:n viele zu vielen. Eine m:n-Beziehung wird relational meist durch eine Zwischentabelle aufgelöst.",
+          "example": "Eine Bestellung hat viele Positionen. Ein Artikel kann in vielen Bestellungen vorkommen."
+        },
+        {
+          "title": "Schlüssel",
+          "body": "Ein Primärschlüssel identifiziert einen Datensatz eindeutig. Ein Fremdschlüssel verweist auf einen Datensatz einer anderen Tabelle.",
+          "example": "bestellung.kunde_id verweist auf kunde.id."
+        },
+        {
+          "title": "Normalformen",
+          "body": "1NF: atomare Werte. 2NF: keine Teilabhängigkeit eines Nichtschlüsselattributs von einem zusammengesetzten Schlüssel. 3NF: keine transitiven Abhängigkeiten zwischen Nichtschlüsselattributen.",
+          "example": "Artikelname gehört in die Artikeltabelle statt wiederholt in jede Bestellposition."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-053",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Wie wird eine m:n-Beziehung im relationalen Modell typischerweise umgesetzt?",
+          "options": [
+            "Durch zwingendes Zusammenlegen aller Entitäten",
+            "Durch Weglassen aller Schlüssel",
+            "Durch eine Liste in einer einzelnen Spalte",
+            "Durch eine Zwischentabelle mit Fremdschlüsseln"
+          ],
+          "correct_index": 3,
+          "explanation": "Die Zwischentabelle kann zusätzlich Attribute der Beziehung enthalten.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-054",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Was verletzt die zweite Normalform bei zusammengesetztem Schlüssel?",
+          "options": [
+            "Eine Tabelle enthält nur atomare Werte",
+            "Jede Tabelle hat einen Primärschlüssel",
+            "Ein Nicht-Schlüsselattribut hängt nur von einem Teil des Schlüssels ab",
+            "Ein Attribut hängt vom gesamten Schlüssel ab"
+          ],
+          "correct_index": 2,
+          "explanation": "Partielle Abhängigkeiten werden in eigene Tabellen ausgelagert.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-055",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Welche Abhängigkeit soll bei der dritten Normalform vermieden werden?",
+          "options": [
+            "Eine Beziehung zwischen zwei Tabellen",
+            "Ein eindeutiger Primärschlüssel",
+            "Eine transitive Abhängigkeit eines Nicht-Schlüsselattributs vom Schlüssel über ein anderes Nicht-Schlüsselattribut",
+            "Eine vollständig vom Schlüssel abhängige Menge"
+          ],
+          "correct_index": 2,
+          "explanation": "Die Auslagerung transitiv abhängiger Daten verringert Änderungsanomalien.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-01",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Ein Kunde hat mehrere Bestellungen. Jede Bestellung gehört genau einem Kunden. Welche Kardinalität gilt?",
+          "options": [
+            "1:1",
+            "1:n",
+            "m:n",
+            "Keine Beziehung"
+          ],
+          "correct_index": 1,
+          "explanation": "Ein Kunde steht mit vielen Bestellungen in Beziehung: 1:n.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-02",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Ein Artikel kann in vielen Bestellungen vorkommen, eine Bestellung enthält mehrere Artikel. Welche Beziehung besteht zunächst?",
+          "options": [
+            "m:n",
+            "1:n",
+            "1:1",
+            "0:0"
+          ],
+          "correct_index": 0,
+          "explanation": "Beide Seiten können mehrere Beziehungen haben. Relational löst man das über Bestellpositionen.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-03",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Wofür wird ein Fremdschlüssel verwendet?",
+          "options": [
+            "Eine andere Tabelle referenzieren",
+            "Tabellen alphabetisch sortieren",
+            "Doppelte Datensätze erzeugen",
+            "Text verschlüsseln"
+          ],
+          "correct_index": 0,
+          "explanation": "Ein Fremdschlüssel stellt die Verbindung zu einem Primär- oder eindeutigen Schlüssel her.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-04",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Welche Spalte eignet sich als Primärschlüssel für eine Kundentabelle?",
+          "options": [
+            "Eine eindeutige Kunden-ID",
+            "Der Vorname",
+            "Die Lieblingsfarbe",
+            "Das Bundesland"
+          ],
+          "correct_index": 0,
+          "explanation": "Ein Primärschlüssel muss jede Zeile eindeutig identifizieren.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-05",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Ein Feld enthält „Rot, Blau, Grün“ als Liste. Welche Normalform ist dadurch verletzt?",
+          "options": [
+            "1NF",
+            "2NF",
+            "3NF",
+            "Keine"
+          ],
+          "correct_index": 0,
+          "explanation": "Die 1NF verlangt atomare Werte statt mehrwertiger Listen in einem Feld.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-06",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Bei einer m:n-Beziehung zwischen Artikel und Bestellung: Wohin gehören die Fremdschlüssel?",
+          "options": [
+            "In eine Zwischentabelle",
+            "Nur in Artikel",
+            "Nur in Bestellung",
+            "In keine Tabelle"
+          ],
+          "correct_index": 0,
+          "explanation": "Eine Tabelle Bestellposition kann Bestellung_ID und Artikel_ID enthalten.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-07",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Eine Mitarbeiterin hat genau einen Spind, jeder Spind genau eine Mitarbeiterin. Welche Kardinalität?",
+          "options": [
+            "1:1",
+            "1:n",
+            "m:n",
+            "Keine"
+          ],
+          "correct_index": 0,
+          "explanation": "Beide Seiten können sich jeweils nur einem Datensatz zuordnen: 1:1.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-08",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Wozu dient die Normalisierung hauptsächlich?",
+          "options": [
+            "Redundanzen und Änderungsfehler reduzieren",
+            "Tabellen möglichst breit machen",
+            "Jede Abfrage verhindern",
+            "Immer alle Daten in einer Tabelle speichern"
+          ],
+          "correct_index": 0,
+          "explanation": "Sauber getrennte Daten verringern Inkonsistenzen bei Änderungen.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-09",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "In einer Bestellposition steht der Artikelname zusätzlich zur Artikel-ID. Wo sollte der Name normalerweise liegen?",
+          "options": [
+            "In der Artikeltabelle",
+            "Nur im Bestellkopf",
+            "Im Primärschlüssel",
+            "In einem Datumfeld"
+          ],
+          "correct_index": 0,
+          "explanation": "Artikelinformationen gehören zur Artikelentität; Positionen verweisen darauf.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "M02-ZUSATZ-10",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "single_choice",
+          "question": "Eine Bestellung besitzt mehrere Positionen. Jede Position gehört zu genau einer Bestellung. Was gilt?",
+          "options": [
+            "Bestellung zu Position ist 1:n",
+            "Bestellung zu Position ist m:n",
+            "Bestellung zu Position ist 1:1",
+            "Keine Beziehung"
+          ],
+          "correct_index": 0,
+          "explanation": "Eine Bestellung hat viele Positionen, eine Position verweist auf eine Bestellung.",
+          "difficulty": "Praxis",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-056",
+          "module": 2,
+          "lesson_id": "2.9",
+          "lesson_title": "Datenbankmodellierung",
+          "type": "practice",
+          "question": "In Position(lieferung_id, artikel_id, artikelname, menge) ist der Schlüssel Lieferung plus Artikel. Artikelname hängt nur vom Artikel ab. Normalisiere.",
+          "model_answer": "Artikel(artikel_id, artikelname) und Position(lieferung_id, artikel_id, menge). Die Position besitzt einen zusammengesetzten Schlüssel sowie Fremdschlüssel auf Lieferung und Artikel. Der Artikelname wird zentral gespeichert; seine Änderung muss nicht in allen Positionen erfolgen.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.10",
+      "title": "Migration und Wartung",
+      "minutes": 360,
+      "slide_count": 25,
+      "concepts": [
+        {
+          "title": "Migrationsstrategien",
+          "body": "Big Bang stellt auf einmal um. Beim Parallelbetrieb laufen Alt- und Neusystem eine Zeitlang parallel; Roll-out und inkrementelle Migration wechseln schrittweise.",
+          "example": "Bei wichtigen Lagerdaten kann ein testbarer Parallelbetrieb das Risiko senken."
+        },
+        {
+          "title": "ETL und Rollback",
+          "body": "ETL heißt Extract, Transform, Load. Daten werden ausgelesen, umgewandelt und geladen. Plane außerdem einen Rückweg für Fehlerfälle.",
+          "example": "Artikeldaten vor dem Laden bereinigen, Mengen abgleichen und Rücksicherung testen."
+        },
+        {
+          "title": "Softwarewartung",
+          "body": "Korrektiv behebt Fehler, adaptiv passt an neue Umgebungen an, perfektiv verbessert Funktionen und präventiv beugt Problemen vor.",
+          "example": "Ein Fehler beim Scannen ist korrektive Wartung; Performanceoptimierung kann perfektiv sein."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-057",
+          "module": 2,
+          "lesson_id": "2.10",
+          "lesson_title": "Migration und Wartung",
+          "type": "single_choice",
+          "question": "Welchen wesentlichen Vorteil hat ein Parallelbetrieb?",
+          "options": [
+            "Er beseitigt automatisch alle doppelten Arbeiten",
+            "Er benötigt keine Datenabstimmung",
+            "Alt- und Neusystem können während der Umstellung verglichen werden",
+            "Er verhindert jedes Rollback"
+          ],
+          "correct_index": 2,
+          "explanation": "Parallelbetrieb verringert bestimmte Umstellungsrisiken, verursacht aber zusätzlichen Betrieb und Abstimmungsaufwand.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-058",
+          "module": 2,
+          "lesson_id": "2.10",
+          "lesson_title": "Migration und Wartung",
+          "type": "single_choice",
+          "question": "Wofür steht ETL?",
+          "options": [
+            "Extract, Transform, Load",
+            "Evaluate, Train, Launch",
+            "Execute, Test, Lock",
+            "Encrypt, Transfer, Log"
+          ],
+          "correct_index": 0,
+          "explanation": "Daten werden ausgelesen, an das Zielschema angepasst und geladen.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-059",
+          "module": 2,
+          "lesson_id": "2.10",
+          "lesson_title": "Migration und Wartung",
+          "type": "single_choice",
+          "question": "Was ist korrektive Wartung?",
+          "options": [
+            "An eine neue Laufzeitumgebung anpassen",
+            "Fehler beheben",
+            "Neue Funktionen ergänzen",
+            "Nur vorbeugend Strukturen verbessern"
+          ],
+          "correct_index": 1,
+          "explanation": "Korrektive Wartung reagiert auf bestehende Fehler.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-060",
+          "module": 2,
+          "lesson_id": "2.10",
+          "lesson_title": "Migration und Wartung",
+          "type": "practice",
+          "question": "Ein SLA fordert 99,9 Prozent Verfügbarkeit in 30 Tagen bei durchgehender Betriebszeit. Wie viel Ausfallzeit ist rechnerisch erlaubt?",
+          "model_answer": "30 mal 24 mal 60 = 43.200 Minuten. 0,1 Prozent davon sind 43,2 Minuten. Das gilt für das hier definierte volle Zeitfenster; Vertragsregeln zu Wartungsfenstern und Messung müssen zusätzlich geklärt werden.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.11",
+      "title": "Prüfungsvorbereitung und Modulabschluss",
+      "minutes": 180,
+      "slide_count": 9,
+      "concepts": [
+        {
+          "title": "Prüfung: begründen statt raten",
+          "body": "Eine gute Fallantwort nennt die konkrete Anforderung, die getroffene Entscheidung und deren Vor- und Nachteile.",
+          "example": "„Wir wählen einen modularen Monolithen, weil das Team klein ist und die Betriebsumgebung überschaubar.“"
+        },
+        {
+          "title": "Zusammenhänge erklären",
+          "body": "Anforderungen, Auswahl, Architektur, Datenmodell, Migration und Betrieb gehören zusammen.",
+          "example": "Eine neue Offlineanforderung kann die Plattformentscheidung verändern."
+        },
+        {
+          "title": "Wiederholen und anwenden",
+          "body": "Übe Fragen aus M02 und begründe deine Antwort mit einem Beispielsatz.",
+          "example": "Warum wäre eine Zwischentabelle für Artikel und Lieferung sinnvoll?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-061",
+          "module": 2,
+          "lesson_id": "2.11",
+          "lesson_title": "Prüfungsvorbereitung und Modulabschluss",
+          "type": "single_choice",
+          "question": "Woran erkennt man eine gute Architekturbegründung in einer Fallaufgabe?",
+          "options": [
+            "Sie beschreibt nur persönliche Vorlieben",
+            "Sie vermeidet alle Nachteile",
+            "Sie verbindet Anforderung, Entscheidung und konkrete Folgen",
+            "Sie nennt ausschließlich moderne Technologien"
+          ],
+          "correct_index": 2,
+          "explanation": "Begründungen müssen auf die Ausgangssituation eingehen und Abwägungen sichtbar machen.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-062",
+          "module": 2,
+          "lesson_id": "2.11",
+          "lesson_title": "Prüfungsvorbereitung und Modulabschluss",
+          "type": "single_choice",
+          "question": "Was gehört in eine nachvollziehbare Softwareauswahl?",
+          "options": [
+            "Kriterien, Gewichtung, Bewertung und begründete Empfehlung",
+            "Nur den Produktnamen",
+            "Nur eine Verkaufsbroschüre",
+            "Die teuerste Alternative ohne Vergleich"
+          ],
+          "correct_index": 0,
+          "explanation": "Die Entscheidung muss aus den Anforderungen und den Vergleichsergebnissen ableitbar sein.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-063",
+          "module": 2,
+          "lesson_id": "2.11",
+          "lesson_title": "Prüfungsvorbereitung und Modulabschluss",
+          "type": "single_choice",
+          "question": "Warum müssen Migration und Wartung schon in der Planung berücksichtigt werden?",
+          "options": [
+            "Weil jede Software nach Auslieferung unverändert bleibt",
+            "Weil Daten nie übernommen werden müssen",
+            "Weil dadurch keine Tests mehr nötig sind",
+            "Weil Einführung und Betrieb die Architektur und Kosten beeinflussen"
+          ],
+          "correct_index": 3,
+          "explanation": "Eine technisch passende Entwicklung muss auch sicher eingeführt und betreut werden können.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-064",
+          "module": 2,
+          "lesson_id": "2.11",
+          "lesson_title": "Prüfungsvorbereitung und Modulabschluss",
+          "type": "practice",
+          "question": "Empfiehl für ein kleines Lager mit begrenztem Entwicklerteam einen modularen Monolithen oder Microservices und begründe.",
+          "model_answer": "Ein modularer Monolith ist häufig ein sinnvoller Start: klare Modulgrenzen bei geringerem Betriebsaufwand. Microservices können unabhängige Bereitstellung und Skalierung ermöglichen, erfordern aber mehr Infrastruktur und verteilte Fehlerbehandlung. Die endgültige Entscheidung hängt von Last, Team und Integrationsanforderungen ab.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    },
+    {
+      "id": "2.12",
+      "title": "Praxisübung: Anforderungen erfragen",
+      "minutes": 120,
+      "slide_count": 8,
+      "concepts": [
+        {
+          "title": "Interviews vorbereiten",
+          "body": "Kläre Ziel, Gesprächspartner und offene Fragen vor dem Termin. Frage erst nach Arbeitsabläufen, dann nach Wunschfunktionen.",
+          "example": "„Beschreiben Sie bitte den letzten Wareneingang, bei dem etwas schiefgelaufen ist.“"
+        },
+        {
+          "title": "Widersprüche sichtbar machen",
+          "body": "Wenn verschiedene Stakeholder Unterschiedliches wollen, dokumentiere den Konflikt und kläre ihn gemeinsam.",
+          "example": "Lagerleitung will Echtzeitdaten, IT warnt vor Netzproblemen: Welche Offline-Strategie hilft?"
+        },
+        {
+          "title": "Ergebnisse nachverfolgen",
+          "body": "Halte zu jeder Anforderung Kennung, Quelle, Priorität und prüfbare Beschreibung fest.",
+          "example": "REQ-015: Mengenabweichung erfassen; Quelle: Lagerleitung; Akzeptanzkriterium: Meldung erscheint im Bericht."
+        }
+      ],
+      "questions": [
+        {
+          "id": "SKY-065",
+          "module": 2,
+          "lesson_id": "2.12",
+          "lesson_title": "Praxisübung: Anforderungen erfragen",
+          "type": "single_choice",
+          "question": "Was sollte vor einem Anforderungsinterview vorbereitet werden?",
+          "options": [
+            "Ziel, Gesprächspartner und ein offener Leitfaden",
+            "Eine fertige Lösung, die nicht mehr geändert werden darf",
+            "Nur ein Produktpreis",
+            "Ein abschließender Vertrag ohne Gespräch"
+          ],
+          "correct_index": 0,
+          "explanation": "Die Vorbereitung richtet das Interview auf relevante Informationen aus.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-066",
+          "module": 2,
+          "lesson_id": "2.12",
+          "lesson_title": "Praxisübung: Anforderungen erfragen",
+          "type": "single_choice",
+          "question": "Wie gehst du mit widersprüchlichen Aussagen zweier Stakeholder um?",
+          "options": [
+            "Immer der ersten Aussage folgen",
+            "Widerspruch dokumentieren und mit den Beteiligten klären",
+            "Die Entwickler allein raten lassen",
+            "Eine Aussage unbemerkt löschen"
+          ],
+          "correct_index": 1,
+          "explanation": "Widersprüche müssen transparent geklärt und Entscheidungen nachvollziehbar festgehalten werden.",
+          "difficulty": "Grundlagen",
+          "origin": "Eigene Trainingsfrage"
+        },
+        {
+          "id": "SKY-067",
+          "module": 2,
+          "lesson_id": "2.12",
+          "lesson_title": "Praxisübung: Anforderungen erfragen",
+          "type": "single_choice",
+          "question": "Was macht eine ermittelte Anforderung besser nachverfolgbar?",
+          "options": [
+            "Ein beliebiger Dateiname ohne Verantwortliche",
+            "Eindeutige Kennung, Quelle und prüfbare Beschreibung",
+            "Ein Titel ohne Inhalt",
+            "Eine mündliche Aussage ohne Notiz"
+          ],
+          "correct_index": 1,
+          "explanation": "Kennung und Quelle erleichtern Rückfragen sowie spätere Verknüpfungen zu Umsetzung und Tests.",
+          "difficulty": "Verständnis",
+          "origin": "Eigene Trainingsfrage"
+        }
+      ],
+      "practice": [
+        {
+          "id": "SKY-068",
+          "module": 2,
+          "lesson_id": "2.12",
+          "lesson_title": "Praxisübung: Anforderungen erfragen",
+          "type": "practice",
+          "question": "Eine Lagerleiterin fordert sofortige Bestandsanzeige, der Entwickler meldet häufige Netzausfälle. Wie klärst du das?",
+          "model_answer": "Konkrete Aktualitätsanforderungen und Verbindungsbedingungen erfragen. Online- und Offlinefälle getrennt beschreiben. Regeln zu lokalem Bestand, Synchronisation und Konflikten gemeinsam festlegen und als prüfbare Anforderungen mit Akzeptanzkriterien dokumentieren.",
+          "max_points": 4,
+          "difficulty": "Anwendung",
+          "origin": "Eigene Praxisaufgabe"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "train-SKY-017",
+      "lesson_id": "2.0",
+      "number": 1,
+      "type": "Übungskarte",
+      "displayFront": "Welches Altsystem wird im durchgängigen Kursfall abgelöst?",
+      "answer": "PALOS — PALOS bildet den Ausgangszustand; Lagerkompass ist das neue Projekt."
+    },
+    {
+      "id": "train-SKY-018",
+      "lesson_id": "2.0",
+      "number": 2,
+      "type": "Übungskarte",
+      "displayFront": "Welche Person kennt als Key-Userin die Lagerabläufe besonders gut?",
+      "answer": "Heike Schulz — Heike Schulz ist Lagerleiterin und fachliche Ansprechpartnerin für die tatsächlichen Abläufe."
+    },
+    {
+      "id": "train-SKY-019",
+      "lesson_id": "2.0",
+      "number": 3,
+      "type": "Übungskarte",
+      "displayFront": "Warum ist ein nächtlicher Batch-Abgleich für aktuelle Bestände problematisch?",
+      "answer": "Änderungen sind zwischen den Abgleichen nicht überall aktuell — Die verzögerte Synchronisation kann veraltete Bestandsinformationen verursachen."
+    },
+    {
+      "id": "train-SKY-021",
+      "lesson_id": "2.1",
+      "number": 4,
+      "type": "Übungskarte",
+      "displayFront": "Was unterscheidet einen Bedarf von einem Lösungswunsch?",
+      "answer": "Der Bedarf beschreibt das zugrunde liegende Problem oder Ziel — Der Wunsch nach einer bestimmten App kann beispielsweise auf dem Bedarf nach weniger Erfassungsfehlern beruhen."
+    },
+    {
+      "id": "train-SKY-022",
+      "lesson_id": "2.1",
+      "number": 5,
+      "type": "Übungskarte",
+      "displayFront": "Wer zählt als Stakeholder eines Softwareprojekts?",
+      "answer": "Eine Person oder Gruppe, die das Projekt beeinflusst oder davon betroffen ist — Auch Anwender, Betrieb, Datenschutz und angrenzende Fachbereiche können beteiligt sein."
+    },
+    {
+      "id": "train-SKY-023",
+      "lesson_id": "2.1",
+      "number": 6,
+      "type": "Übungskarte",
+      "displayFront": "Was beschreibt eine Persona?",
+      "answer": "Ein auf Erkenntnissen beruhendes Beispiel einer Nutzergruppe — Personas machen Ziele, Arbeitsumfeld und Schwierigkeiten typischer Nutzer greifbar."
+    },
+    {
+      "id": "train-SKY-025",
+      "lesson_id": "2.2",
+      "number": 7,
+      "type": "Übungskarte",
+      "displayFront": "Welche Methode zeigt besonders gut den tatsächlichen Arbeitsablauf?",
+      "answer": "Beobachtung am Arbeitsplatz — Beobachtung macht Medienbrüche, Umwege und implizites Wissen sichtbar."
+    },
+    {
+      "id": "train-SKY-026",
+      "lesson_id": "2.2",
+      "number": 8,
+      "type": "Übungskarte",
+      "displayFront": "Welche Aussage ist eine funktionale Anforderung?",
+      "answer": "Das System muss eine Lieferung erfassen können — Funktionale Anforderungen beschreiben eine Fähigkeit des Systems."
+    },
+    {
+      "id": "train-SKY-027",
+      "lesson_id": "2.2",
+      "number": 9,
+      "type": "Übungskarte",
+      "displayFront": "Welche Formulierung ist am besten überprüfbar?",
+      "answer": "95 Prozent der Bestandsabfragen antworten unter definierter Testlast innerhalb von zwei Sekunden — Messgröße, Grenzwert und Bedingungen ermöglichen eine objektive Prüfung."
+    },
+    {
+      "id": "train-SKY-029",
+      "lesson_id": "2.3",
+      "number": 10,
+      "type": "Übungskarte",
+      "displayFront": "Wer beschreibt im klassischen Lastenheft vor allem die Anforderungen?",
+      "answer": "Der Auftraggeber — Das Lastenheft beschreibt aus Auftraggebersicht, was erreicht werden soll."
+    },
+    {
+      "id": "train-SKY-030",
+      "lesson_id": "2.3",
+      "number": 11,
+      "type": "Übungskarte",
+      "displayFront": "Welche Form folgt einer typischen User Story?",
+      "answer": "Als Rolle möchte ich Funktion, damit Nutzen — Die Story verknüpft Nutzerrolle, gewünschte Fähigkeit und Nutzen."
+    },
+    {
+      "id": "train-SKY-031",
+      "lesson_id": "2.3",
+      "number": 12,
+      "type": "Übungskarte",
+      "displayFront": "Was ist der Zweck von Traceability?",
+      "answer": "Anforderungen mit Umsetzung und Nachweisen verknüpfen — Verknüpfungen unterstützen Änderungsfolgenanalyse und den Nachweis der Erfüllung."
+    },
+    {
+      "id": "train-SKY-033",
+      "lesson_id": "2.4",
+      "number": 13,
+      "type": "Übungskarte",
+      "displayFront": "Was bedeutet Won't Have this time?",
+      "answer": "Bewusst außerhalb des aktuellen Umfangs — Won't beschreibt eine Entscheidung für den betrachteten Zeitraum oder Release."
+    },
+    {
+      "id": "train-SKY-034",
+      "lesson_id": "2.4",
+      "number": 14,
+      "type": "Übungskarte",
+      "displayFront": "Was kennzeichnet ein Basismerkmal im Kano-Modell?",
+      "answer": "Fehlen erzeugt Unzufriedenheit, Erfüllung wird erwartet — Basismerkmale werden häufig als selbstverständlich vorausgesetzt."
+    },
+    {
+      "id": "train-SKY-035",
+      "lesson_id": "2.4",
+      "number": 15,
+      "type": "Übungskarte",
+      "displayFront": "Wie entsteht ein gewichteter Gesamtnutzwert?",
+      "answer": "Bewertungen je Kriterium mit den Gewichten multiplizieren und summieren — Vorab definierte Kriterien und eine konsistente Skala machen die Auswahl nachvollziehbar."
+    },
+    {
+      "id": "train-SKY-037",
+      "lesson_id": "2.5",
+      "number": 16,
+      "type": "Übungskarte",
+      "displayFront": "Welche Kosten gehören zur TCO-Betrachtung?",
+      "answer": "Anschaffung, Einführung, Betrieb, Wartung und weitere Lebenszykluskosten — Eine günstige Anschaffung kann durch hohen Betriebs- oder Anpassungsaufwand teuer werden."
+    },
+    {
+      "id": "train-SKY-038",
+      "lesson_id": "2.5",
+      "number": 17,
+      "type": "Übungskarte",
+      "displayFront": "Welches Ziel hat ein Proof of Concept vor allem?",
+      "answer": "Eine technische Machbarkeit prüfen — Ein PoC beantwortet eine begrenzte Machbarkeitsfrage."
+    },
+    {
+      "id": "train-SKY-039",
+      "lesson_id": "2.5",
+      "number": 18,
+      "type": "Übungskarte",
+      "displayFront": "Welche Situation spricht eher für eine Eigenentwicklung?",
+      "answer": "Sehr spezifische Kernprozesse, die Standardprodukte schlecht abdecken — Die Entscheidung berücksichtigt fachliche Passung, Kosten, Risiken und vorhandene Fähigkeiten."
+    },
+    {
+      "id": "train-SKY-041",
+      "lesson_id": "2.6",
+      "number": 19,
+      "type": "Übungskarte",
+      "displayFront": "Welche Frage beantwortet die Kontextabgrenzung?",
+      "answer": "Welche Nutzer und Nachbarsysteme mit dem System interagieren — Die Kontextsicht zeigt die Systemgrenze und externe Beziehungen."
+    },
+    {
+      "id": "train-SKY-042",
+      "lesson_id": "2.6",
+      "number": 20,
+      "type": "Übungskarte",
+      "displayFront": "Was dokumentiert ein Architecture Decision Record?",
+      "answer": "Eine Architekturentscheidung mit Kontext, Alternativen und Folgen — Ein ADR macht Gründe und Konsequenzen einer Entscheidung später nachvollziehbar."
+    },
+    {
+      "id": "train-SKY-043",
+      "lesson_id": "2.6",
+      "number": 21,
+      "type": "Übungskarte",
+      "displayFront": "Welche C4-Sicht zeigt Anwendungen und Datenspeicher innerhalb des betrachteten Systems?",
+      "answer": "Container-Sicht — Container bezeichnet im C4-Modell eigenständig ausführbare oder speichernde Einheiten und nicht ausschließlich Docker-Container."
+    },
+    {
+      "id": "train-SKY-045",
+      "lesson_id": "2.7",
+      "number": 22,
+      "type": "Übungskarte",
+      "displayFront": "Was eignet sich zur frühen Prüfung eines Bildschirmablaufs?",
+      "answer": "Ein einfacher Papierprototyp — Niedrige Fidelity ermöglicht frühes Feedback bei geringem Änderungsaufwand."
+    },
+    {
+      "id": "train-SKY-046",
+      "lesson_id": "2.7",
+      "number": 23,
+      "type": "Übungskarte",
+      "displayFront": "Was ist im Usability-Test besonders wichtig?",
+      "answer": "Nutzer reale Aufgaben bearbeiten lassen und ihr Verhalten beobachten — Beobachtet wird, ob Zielnutzer ihre Aufgabe unter passenden Bedingungen bewältigen."
+    },
+    {
+      "id": "train-SKY-047",
+      "lesson_id": "2.7",
+      "number": 24,
+      "type": "Übungskarte",
+      "displayFront": "Wer betreibt bei SaaS typischerweise die Anwendung?",
+      "answer": "Der Anbieter — SaaS liefert eine nutzbare Anwendung; der Kunde bleibt für seinen angemessenen Umgang und seine Konfiguration verantwortlich."
+    },
+    {
+      "id": "train-SKY-049",
+      "lesson_id": "2.8",
+      "number": 25,
+      "type": "Übungskarte",
+      "displayFront": "Was gehört typischerweise zum Grob-Design?",
+      "answer": "Hauptkomponenten und ihre Verantwortlichkeiten — Das Grob-Design beschreibt die Gesamtstruktur; das Fein-Design konkretisiert Details."
+    },
+    {
+      "id": "train-SKY-050",
+      "lesson_id": "2.8",
+      "number": 26,
+      "type": "Übungskarte",
+      "displayFront": "Welche Kombination ist als Entwurfsziel meist sinnvoll?",
+      "answer": "Hohe Kohäsion und geringe Kopplung — Zusammengehöriges liegt im selben Modul, während Abhängigkeiten zwischen Modulen begrenzt werden."
+    },
+    {
+      "id": "train-SKY-051",
+      "lesson_id": "2.8",
+      "number": 27,
+      "type": "Übungskarte",
+      "displayFront": "Was zeigt ein Sequenzdiagramm besonders gut?",
+      "answer": "Die zeitliche Folge von Nachrichten zwischen Beteiligten — Es eignet sich beispielsweise zur Darstellung eines API-Aufrufs über Controller, Service und Repository."
+    },
+    {
+      "id": "train-SKY-053",
+      "lesson_id": "2.9",
+      "number": 28,
+      "type": "Übungskarte",
+      "displayFront": "Wie wird eine m:n-Beziehung im relationalen Modell typischerweise umgesetzt?",
+      "answer": "Durch eine Zwischentabelle mit Fremdschlüsseln — Die Zwischentabelle kann zusätzlich Attribute der Beziehung enthalten."
+    },
+    {
+      "id": "train-SKY-054",
+      "lesson_id": "2.9",
+      "number": 29,
+      "type": "Übungskarte",
+      "displayFront": "Was verletzt die zweite Normalform bei zusammengesetztem Schlüssel?",
+      "answer": "Ein Nicht-Schlüsselattribut hängt nur von einem Teil des Schlüssels ab — Partielle Abhängigkeiten werden in eigene Tabellen ausgelagert."
+    },
+    {
+      "id": "train-SKY-055",
+      "lesson_id": "2.9",
+      "number": 30,
+      "type": "Übungskarte",
+      "displayFront": "Welche Abhängigkeit soll bei der dritten Normalform vermieden werden?",
+      "answer": "Eine transitive Abhängigkeit eines Nicht-Schlüsselattributs vom Schlüssel über ein anderes Nicht-Schlüsselattribut — Die Auslagerung transitiv abhängiger Daten verringert Änderungsanomalien."
+    },
+    {
+      "id": "train-M02-ZUSATZ-01",
+      "lesson_id": "2.9",
+      "number": 31,
+      "type": "Übungskarte",
+      "displayFront": "Ein Kunde hat mehrere Bestellungen. Jede Bestellung gehört genau einem Kunden. Welche Kardinalität gilt?",
+      "answer": "1:n — Ein Kunde steht mit vielen Bestellungen in Beziehung: 1:n."
+    },
+    {
+      "id": "train-M02-ZUSATZ-02",
+      "lesson_id": "2.9",
+      "number": 32,
+      "type": "Übungskarte",
+      "displayFront": "Ein Artikel kann in vielen Bestellungen vorkommen, eine Bestellung enthält mehrere Artikel. Welche Beziehung besteht zunächst?",
+      "answer": "m:n — Beide Seiten können mehrere Beziehungen haben. Relational löst man das über Bestellpositionen."
+    },
+    {
+      "id": "train-M02-ZUSATZ-03",
+      "lesson_id": "2.9",
+      "number": 33,
+      "type": "Übungskarte",
+      "displayFront": "Wofür wird ein Fremdschlüssel verwendet?",
+      "answer": "Eine andere Tabelle referenzieren — Ein Fremdschlüssel stellt die Verbindung zu einem Primär- oder eindeutigen Schlüssel her."
+    },
+    {
+      "id": "train-M02-ZUSATZ-04",
+      "lesson_id": "2.9",
+      "number": 34,
+      "type": "Übungskarte",
+      "displayFront": "Welche Spalte eignet sich als Primärschlüssel für eine Kundentabelle?",
+      "answer": "Eine eindeutige Kunden-ID — Ein Primärschlüssel muss jede Zeile eindeutig identifizieren."
+    },
+    {
+      "id": "train-M02-ZUSATZ-05",
+      "lesson_id": "2.9",
+      "number": 35,
+      "type": "Übungskarte",
+      "displayFront": "Ein Feld enthält „Rot, Blau, Grün“ als Liste. Welche Normalform ist dadurch verletzt?",
+      "answer": "1NF — Die 1NF verlangt atomare Werte statt mehrwertiger Listen in einem Feld."
+    },
+    {
+      "id": "train-M02-ZUSATZ-06",
+      "lesson_id": "2.9",
+      "number": 36,
+      "type": "Übungskarte",
+      "displayFront": "Bei einer m:n-Beziehung zwischen Artikel und Bestellung: Wohin gehören die Fremdschlüssel?",
+      "answer": "In eine Zwischentabelle — Eine Tabelle Bestellposition kann Bestellung_ID und Artikel_ID enthalten."
+    },
+    {
+      "id": "train-M02-ZUSATZ-07",
+      "lesson_id": "2.9",
+      "number": 37,
+      "type": "Übungskarte",
+      "displayFront": "Eine Mitarbeiterin hat genau einen Spind, jeder Spind genau eine Mitarbeiterin. Welche Kardinalität?",
+      "answer": "1:1 — Beide Seiten können sich jeweils nur einem Datensatz zuordnen: 1:1."
+    },
+    {
+      "id": "train-M02-ZUSATZ-08",
+      "lesson_id": "2.9",
+      "number": 38,
+      "type": "Übungskarte",
+      "displayFront": "Wozu dient die Normalisierung hauptsächlich?",
+      "answer": "Redundanzen und Änderungsfehler reduzieren — Sauber getrennte Daten verringern Inkonsistenzen bei Änderungen."
+    },
+    {
+      "id": "train-M02-ZUSATZ-09",
+      "lesson_id": "2.9",
+      "number": 39,
+      "type": "Übungskarte",
+      "displayFront": "In einer Bestellposition steht der Artikelname zusätzlich zur Artikel-ID. Wo sollte der Name normalerweise liegen?",
+      "answer": "In der Artikeltabelle — Artikelinformationen gehören zur Artikelentität; Positionen verweisen darauf."
+    },
+    {
+      "id": "train-M02-ZUSATZ-10",
+      "lesson_id": "2.9",
+      "number": 40,
+      "type": "Übungskarte",
+      "displayFront": "Eine Bestellung besitzt mehrere Positionen. Jede Position gehört zu genau einer Bestellung. Was gilt?",
+      "answer": "Bestellung zu Position ist 1:n — Eine Bestellung hat viele Positionen, eine Position verweist auf eine Bestellung."
+    },
+    {
+      "id": "train-SKY-057",
+      "lesson_id": "2.10",
+      "number": 41,
+      "type": "Übungskarte",
+      "displayFront": "Welchen wesentlichen Vorteil hat ein Parallelbetrieb?",
+      "answer": "Alt- und Neusystem können während der Umstellung verglichen werden — Parallelbetrieb verringert bestimmte Umstellungsrisiken, verursacht aber zusätzlichen Betrieb und Abstimmungsaufwand."
+    },
+    {
+      "id": "train-SKY-058",
+      "lesson_id": "2.10",
+      "number": 42,
+      "type": "Übungskarte",
+      "displayFront": "Wofür steht ETL?",
+      "answer": "Extract, Transform, Load — Daten werden ausgelesen, an das Zielschema angepasst und geladen."
+    },
+    {
+      "id": "train-SKY-059",
+      "lesson_id": "2.10",
+      "number": 43,
+      "type": "Übungskarte",
+      "displayFront": "Was ist korrektive Wartung?",
+      "answer": "Fehler beheben — Korrektive Wartung reagiert auf bestehende Fehler."
+    },
+    {
+      "id": "train-SKY-061",
+      "lesson_id": "2.11",
+      "number": 44,
+      "type": "Übungskarte",
+      "displayFront": "Woran erkennt man eine gute Architekturbegründung in einer Fallaufgabe?",
+      "answer": "Sie verbindet Anforderung, Entscheidung und konkrete Folgen — Begründungen müssen auf die Ausgangssituation eingehen und Abwägungen sichtbar machen."
+    },
+    {
+      "id": "train-SKY-062",
+      "lesson_id": "2.11",
+      "number": 45,
+      "type": "Übungskarte",
+      "displayFront": "Was gehört in eine nachvollziehbare Softwareauswahl?",
+      "answer": "Kriterien, Gewichtung, Bewertung und begründete Empfehlung — Die Entscheidung muss aus den Anforderungen und den Vergleichsergebnissen ableitbar sein."
+    },
+    {
+      "id": "train-SKY-063",
+      "lesson_id": "2.11",
+      "number": 46,
+      "type": "Übungskarte",
+      "displayFront": "Warum müssen Migration und Wartung schon in der Planung berücksichtigt werden?",
+      "answer": "Weil Einführung und Betrieb die Architektur und Kosten beeinflussen — Eine technisch passende Entwicklung muss auch sicher eingeführt und betreut werden können."
+    },
+    {
+      "id": "train-SKY-065",
+      "lesson_id": "2.12",
+      "number": 47,
+      "type": "Übungskarte",
+      "displayFront": "Was sollte vor einem Anforderungsinterview vorbereitet werden?",
+      "answer": "Ziel, Gesprächspartner und ein offener Leitfaden — Die Vorbereitung richtet das Interview auf relevante Informationen aus."
+    },
+    {
+      "id": "train-SKY-066",
+      "lesson_id": "2.12",
+      "number": 48,
+      "type": "Übungskarte",
+      "displayFront": "Wie gehst du mit widersprüchlichen Aussagen zweier Stakeholder um?",
+      "answer": "Widerspruch dokumentieren und mit den Beteiligten klären — Widersprüche müssen transparent geklärt und Entscheidungen nachvollziehbar festgehalten werden."
+    },
+    {
+      "id": "train-SKY-067",
+      "lesson_id": "2.12",
+      "number": 49,
+      "type": "Übungskarte",
+      "displayFront": "Was macht eine ermittelte Anforderung besser nachverfolgbar?",
+      "answer": "Eindeutige Kennung, Quelle und prüfbare Beschreibung — Kennung und Quelle erleichtern Rückfragen sowie spätere Verknüpfungen zu Umsetzung und Tests."
+    }
+  ],
+  "sourceInfo": {
+    "content": "Selbst formulierte Lern- und Übungsinhalte",
+    "publicPreview": true,
+    "quizCount": 49,
+    "practiceCount": 13,
+    "cardCount": 49,
+    "originalCourseCardsPublished": 0
+  }
+}

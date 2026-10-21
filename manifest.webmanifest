@@ -1,0 +1,23 @@
+{
+  "name": "Skillyr Learn – M02 Test",
+  "short_name": "Skillyr M02 Test",
+  "description": "Spielerisch Softwarearchitektur lernen – M02.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#141527",
+  "theme_color": "#141527",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
