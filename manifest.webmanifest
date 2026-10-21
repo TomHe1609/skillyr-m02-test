@@ -1,7 +1,7 @@
 {
-  "name": "Skillyr Learn – M02 Test",
-  "short_name": "Skillyr M02 Test",
-  "description": "Spielerisch Softwarearchitektur lernen – M02.",
+  "name": "Skillyr Learn – M01 bis M05 Test",
+  "short_name": "Skillyr Learn",
+  "description": "Spielerische Test-Lernpfade für M01 bis M05.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

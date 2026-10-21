@@ -1,6 +1,6 @@
 const PREFIX='skillyr-m02-test::';
-const CACHE=PREFIX+'public-2026-10-21-v2';
-const FILES=['./','./index.html','./data-m02.json','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE=PREFIX+'m01-m05-public-v1';
+const FILES=['./','./index.html','./data-m02.json','./data-m01-m05.json','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 const OWN_URLS=new Set(FILES.map(path=>new URL(path,self.registration.scope).href));
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

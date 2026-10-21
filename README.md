@@ -1,35 +1,48 @@
-# Skillyr Learn – öffentliche M02-Testversion
+# Skillyr Learn – öffentliche Testversion M01 bis M05
 
-Öffentliche Testseite: https://tomhe1609.github.io/skillyr-m02-test/
+Testseite: https://tomhe1609.github.io/skillyr-m02-test/
 
-Grundlage ist das bereitgestellte Paket `Skillyr_Learn_M02_Pages_Testbereit.zip`. Sein dunkler, spielerischer Lernpfad und die Lerninhalte wurden beibehalten.
+Die vorhandene Pages-App wurde im gleichen dunklen Lernpfad-Stil um M01, M03, M04 und M05 erweitert. Das Repository bleibt absichtlich unter seiner bisherigen Adresse erreichbar.
 
-## Enthalten
+## Umfang
 
-- M01–M09 als Modulübersicht, ausschließlich M02 aktiv.
-- 13 Lektionen (2.0–2.12) mit Erklärungen und Praxisbeispielen vor dem Quiz.
-- 49 selbst formulierte Multiple-Choice-Fragen, 13 Freitextaufgaben und 49 selbst formulierte Trainingskarten.
-- Sofortiges Feedback, XP, Lerntage, Fehlertraining und persönlicher Lernbereich.
-- Freitext mit Musterlösung und Selbsteinschätzung. Dies ist keine automatische KI-Bewertung.
-- Lokaler Fortschritt sowie Export und geprüfter Import als JSON-Datei.
-- Offline-Unterstützung nach dem ersten erfolgreichen Laden und Speichern durch den Browser; optional zum Home-Bildschirm hinzufügen.
+| Modul | Themen | Lektionen | Multiple Choice | Freitext | Trainingskarten |
+|---|---|---:|---:|---:|---:|
+| M01 | Lern- und Arbeitsmethodik | 3 | 9 | 3 | 9 |
+| M02 | Analysieren und Planen der Softwarearchitektur | 13 | 49 | 13 | 49 |
+| M03 | Entwickeln von Softwarearchitekturen | 11 | 33 | 11 | 33 |
+| M04 | Sicherstellen der Produktqualität | 6 | 18 | 6 | 18 |
+| M05 | Software- und Anwenderdokumentation | 6 | 18 | 6 | 18 |
 
-## KI bleibt deaktiviert
+Insgesamt 39 Lektionen, 127 Multiple-Choice-Fragen, 39 Freitextaufgaben und 127 Trainingskarten. M06–M09 sind sichtbar, aber noch nicht aktiv.
 
-Diese öffentliche Version enthält keinen aktivierbaren KI-Endpunkt und führt keine KI-Anfragen aus. Die Eingaben zur Serververbindung und die KI-Prüfschaltflächen wurden entfernt. Freitext und Musterlösungen bleiben vollständig nutzbar.
+M01 und M03 folgen den bereits vorliegenden Kurslektionen. M04 und M05 lagen als größere Themenblöcke vor und wurden für diese Testversion jeweils in sechs kompakte Trainingsabschnitte gegliedert. Das ist ein Übungsstand und kein vollständiger Ersatz des Kurses. M02-Inhalte und Aufgabenkennungen bleiben erhalten.
 
-Eine echte Anbindung erfolgt erst nach Einrichtung eines sicheren Servers mit Nutzerzugang, Schutz vor Missbrauch, Kostenbegrenzungen und passenden Datenschutzhinweisen. Keine API-Schlüssel in Browser-Code oder Repository ablegen.
+## Lernen
 
-## Veröffentlichung und Trennung
+- Erklärungen und Beispiele vor dem gemischten Quiz.
+- Freitext mit Musterlösung und bewusster Selbsteinschätzung; echte KI bleibt deaktiviert.
+- XP für erstmals richtig gelöste Aufgaben, lokaler Lernstand und Lerntage.
+- Eigener Lernpfad und Kartenfilter pro Modul, gemeinsame Fortschrittsübersicht.
+- Fehlertraining pro Modul oder über alle fünf Module.
+- Export/Import des gesamten Lernstands und Offline-Unterstützung nach dem ersten erfolgreichen Laden.
 
-GitHub Pages veröffentlicht ausschließlich dieses Repository über `main` und `/(root)`. Alle acht Dateien des öffentlichen Pakets liegen im Stammverzeichnis.
+## Bisherigen M02-Fortschritt erhalten
 
-Das KI-v4-Entwicklungspaket und seine originalen Kurskarten sind nicht Teil dieser Veröffentlichung. Das öffentliche Übungsmaterial ist selbst formuliert, kein offizielles Angebot von Skillyr und keine Sammlung offizieller Prüfungsfragen.
+Die neue App verwendet `skillyr_learn_m01_m05_preview_v1`. Beim ersten Start wird ein gültiger bisheriger Stand aus `skillyr_learn_m02_preview_v1` automatisch übernommen. Der alte Eintrag wird dabei weder geändert noch gelöscht. Ein vorhandener neuer Lernstand wird nicht überschrieben.
 
-Das Repository `TomHe1609/It-lernquiz` und dessen Pages-Einstellungen bleiben unverändert. Der Service Worker dieser Test-App ist auf ihren eigenen Pfad begrenzt und entfernt ausschließlich veraltete Caches mit dem Präfix `skillyr-m02-test::`. Zwischenspeicher anderer Apps werden nicht angefasst.
+Neue Exporte tragen die App-Kennung `skillyr-learn-m01-m05`; bisherige M02-Exporte mit `skillyr-learn-m02` werden ebenfalls angenommen. Ein Import ersetzt nach ausdrücklicher Bestätigung den ganzen aktuellen Lernstand. Die Sicherung kann eigene Freitexte enthalten. Andere Browser oder Geräte haben getrennte Lernstände.
 
-## Lokale Daten
+## Quellen und Grenzen
 
-Der Lernstand verwendet ausschließlich `skillyr_learn_m02_preview_v1` im lokalen Browserspeicher. Andere Geräte und Browser haben getrennte Lernstände; zum Übertragen dient der Export. Die Sicherung enthält gespeicherte Freitexte und sollte entsprechend behandelt werden. Die App sendet keine Lernantworten an einen Server; beim Seitenaufruf verarbeitet der Hosting-Anbieter die üblichen technischen Verbindungsdaten.
+Grundlage sind die bereits vorliegenden Kursthemen, die öffentliche M02-Paketfassung und die zuvor neu formulierten Übungsfragen. Zusätzliche Erklärungen und Übungen für M04/M05 wurden eigenständig erstellt. Originale Lernkarten, Kursfolien, private Entwicklungsdateien und API-Schlüssel sind nicht Teil dieser Veröffentlichung. Es handelt sich um ein eigenständiges, inoffizielles Lernangebot und keine offiziellen Prüfungsfragen.
 
-Bei gesperrtem Browserspeicher bleibt Lernen im Arbeitsspeicher möglich; ein sichtbarer Hinweis empfiehlt den Export. Ein Import mit ungültigem Format ersetzt den vorhandenen Lernstand nicht.
+Die App führt keine KI-Aufrufe aus und enthält keine aktivierbare KI-Verbindung. Eine spätere Anbindung setzt einen geeigneten sicheren Server voraus. Die App sendet keine Lernantworten an einen Server; beim Seitenaufruf fallen die üblichen Verbindungsdaten des Hosting-Anbieters an.
+
+## Veröffentlichung und Isolation
+
+GitHub Pages: `main` und `/(root)` im Repository `TomHe1609/skillyr-m02-test`.
+
+`index.html` enthält die eingebetteten App-Daten; `data-m01-m05.json` stellt denselben öffentlichen Inhalt separat bereit. Die bisherige `data-m02.json` bleibt unverändert als Kompatibilitätsdatei erhalten. Der Service Worker speichert nur Dateien dieser Test-App und entfernt ausschließlich ältere Caches mit dem Präfix `skillyr-m02-test::`.
+
+`TomHe1609/It-lernquiz`, dessen Pages-Konfiguration, lokale Speicher und Offline-Caches werden nicht verändert.
