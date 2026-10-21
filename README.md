@@ -14,9 +14,13 @@ Die vorhandene Pages-App wurde im gleichen dunklen Lernpfad-Stil um M01, M03, M0
 | M04 | Sicherstellen der Produktqualität | 6 | 18 | 6 | 18 |
 | M05 | Software- und Anwenderdokumentation | 6 | 18 | 6 | 18 |
 
-Insgesamt 39 Lektionen, 127 Multiple-Choice-Fragen, 39 Freitextaufgaben und 127 Trainingskarten. M06–M09 sind sichtbar, aber noch nicht aktiv.
+Insgesamt 39 Lektionen, 127 Multiple-Choice-Fragen, 39 Freitextaufgaben und 127 Trainingskarten. M06–M09 sind im aufklappbaren Hinweisbereich sichtbar, aber noch nicht aktiv.
 
 M01 und M03 folgen den bereits vorliegenden Kurslektionen. M04 und M05 lagen als größere Themenblöcke vor und wurden für diese Testversion jeweils in sechs kompakte Trainingsabschnitte gegliedert. Das ist ein Übungsstand und kein vollständiger Ersatz des Kurses. M02-Inhalte und Aufgabenkennungen bleiben erhalten.
+
+## Oberfläche
+
+Die Startseite bündelt Modulauswahl, Lernstand und eine kompakte senkrechte Timeline. Einheitliche SVG-Linienicons ersetzen die farbigen Symbole in der Kopf- und Fußnavigation. Hinweise und künftige Module stehen im aufklappbaren Bereich „Über diese Testversion“.
 
 ## Lernen
 
