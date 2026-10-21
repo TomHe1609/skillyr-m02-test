@@ -315,7 +315,7 @@ try{
  else{const legacy=localStorage.getItem(LEGACY_STORE);const migrated=legacy?normalizeProgress(JSON.parse(legacy)):null;progress=migrated||blank();if(migrated){progress.activeModule=2;localStorage.setItem(STORE,JSON.stringify(progress));}}
 }catch(_){progress=blank();storageAvailable=false;}
 let pendingCompletion=null;
-let current={module:progress.activeModule,page:'path',lesson:defaultLesson(progress.activeModule),reviewScope:'module',step:0,question:0,answer:-1,session:[],sessionCorrect:0,sessionWrong:0,flashIndex:0,flashRevealed:false,cardSource:'course',showPractice:false,answeredPractice:false,review:false,coachBusy:false,coachFeedback:null,coachError:'',standaloneFeedback:null};
+let current={module:progress.activeModule,page:'path',lesson:defaultLesson(progress.activeModule),reviewScope:'module',step:0,question:0,answer:-1,session:[],sessionCorrect:0,sessionWrong:0,flashIndex:0,flashRevealed:false,cardModule:progress.activeModule,showPractice:false,answeredPractice:false,review:false,coachBusy:false,coachFeedback:null,coachError:'',standaloneFeedback:null};
 const byId=id=>document.getElementById(id);
 const escapeHTML=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -365,6 +365,8 @@ function reviseCoachAnswer(){
 const L=id=>DATA.lessons.find(v=>v.id===id)||DATA.lessons[0];
 const countDone=(module=null)=>DATA.lessons.filter(l=>(module===null||l.module===module)&&progress.done[l.id]).length;
 const lessonCards=(id,source='course')=>(source==='extra'?DATA.cards:DATA.courseCards).filter(v=>v.lesson_id===id);
+const CARD_CATALOG=[...DATA.courseCards.map(c=>({...c,kind:'course'})),...DATA.cards.map(c=>({...c,module:L(c.lesson_id).module,kind:'extra'}))].sort((a,b)=>a.module-b.module);
+const moduleCards=(scope=current.cardModule)=>scope==='all'?CARD_CATALOG:CARD_CATALOG.filter(c=>c.module===Number(scope));
 const save=()=>{try{localStorage.setItem(STORE,JSON.stringify(progress));storageAvailable=true}catch(e){storageAvailable=false;console.warn('Speichern nicht möglich',e)};syncStats()};
 function touchDay(){const d=new Date();const day=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');if(!progress.days.includes(day)){progress.days.push(day);save()}}
 function streak(){let dates=new Set(progress.days);let d=new Date(),n=0;const day=()=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');if(!dates.has(day()))d.setDate(d.getDate()-1);while(dates.has(day())){n++;d.setDate(d.getDate()-1)}return n}
@@ -384,7 +386,7 @@ function setPage(page,id){
  if(id){current.lesson=id;current.module=L(id).module;}
  if(L(current.lesson).module!==current.module||!isLessonUnlocked(current.lesson))current.lesson=defaultLesson(current.module);
  if(progress.activeModule!==current.module){progress.activeModule=current.module;save();}
- if(page==='cards')current.cardSource=lessonCards(current.lesson).length?'course':'extra';
+ if(page==='cards')current.cardModule=current.module;
  current.step=0;current.flashIndex=0;current.flashRevealed=false;current.answeredPractice=false;current.showPractice=false;current.standaloneFeedback=null;current.coachError='';current.coachBusy=false;render();
 }
 function isLessonUnlocked(id){
@@ -535,12 +537,13 @@ function assessFree(understood,mode="self"){
 }
 
 function cardsHTML(){
- const m=moduleInfo(),l=L(current.lesson),source=current.cardSource==='extra'?'extra':'course',cs=lessonCards(l.id,source),total=source==='course'?DATA.courseCards.filter(c=>c.module===m.id).length:m.cardCount;
+ const scope=current.cardModule==='all'?'all':current.module,cs=moduleCards(scope);
  if(current.flashIndex>=cs.length)current.flashIndex=0;const c=cs[current.flashIndex]||null;
  const example=c?.example&&!current.flashRevealed?`<span class="card-example-label">Eigenes Beispiel</span><pre class="card-example"><code>${escapeHTML(c.example)}</code></pre>`:'';
  const refs=c?.references?.length&&current.flashRevealed?`<details class="card-references"><summary>Quellen und Einordnung</summary><ul>${c.references.map(r=>`<li><a href="${escapeHTML(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(r.title)}</a></li>`).join('')}</ul><p>Eigene Antwort · geprüft am 21.10.2026.</p></details>`:'';
- const card=c?`<div class="cards-meta"><span>Karte ${current.flashIndex+1} / ${cs.length}</span><span>${m.code} · ${source==='course'?'#'+c.number:l.id}</span></div><button class="card-front ${current.flashRevealed?'card-back':''}" id="flip" aria-pressed="${current.flashRevealed}"><span class="card-kicker">${current.flashRevealed?'Eigene Antwort':c.type==='Lückentext'?'Lücken ergänzen':'Frage'}</span><h2>${escapeHTML(current.flashRevealed?c.answer:c.displayFront)}</h2>${example}<span class="card-flip-hint">${plainIcon('review')} ${current.flashRevealed?'Zur Frage wechseln':'Antwort ansehen'}</span></button>${refs}<div class="buttons cards-actions"><button class="secondary" id="cardPrev" ${current.flashIndex===0?'disabled':''}>Vorherige</button><button class="primary" id="cardNext" ${current.flashIndex===cs.length-1?'disabled':''}>Nächste ${plainIcon('arrow')}</button></div>`:`<div class="empty">Für diese Lektion gibt es in diesem Kartensatz keine Karte. Wähle die zusätzlichen Übungskarten oder eine andere freigegebene Lektion.</div>`;
- return `<button class="back" data-page="path">${plainIcon('arrow')} Lernpfad ${m.code}</button><div class="eyebrow">${m.code} · WIEDERHOLEN</div><h1 class="title">Lernkarten</h1><p class="page-description">Frage durchdenken, Antwort ansehen und in deinem Tempo weiterlernen.</p><div class="field-group"><label for="cardSource">Kartensatz</label><select id="cardSource"><option value="course" ${source==='course'?'selected':''}>Skillyr-Fragen · eigene Antworten</option><option value="extra" ${source==='extra'?'selected':''}>Zusätzliche Übungskarten</option></select></div><div class="field-group"><label for="cardLesson">Lektion</label><select id="cardLesson" aria-label="Lektion für Lernkarten auswählen">${moduleLessons().map(x=>`<option value="${x.id}" ${x.id===l.id?'selected':''} ${isLessonUnlocked(x.id)?'':'disabled'}>${x.id} · ${escapeHTML(x.title)} · ${lessonCards(x.id,source).length} Karten${isLessonUnlocked(x.id)?'':' (gesperrt)'}</option>`).join('')}</select></div>${card}<p class="cards-note">${source==='course'?'Kursfragen mit selbst formulierten Antworten · keine Original-Rückseiten.':'Zusätzliche selbst formulierte Übungskarten.'} ${total} Karten in ${m.code}. Gesperrte Lektionen öffnen sich im Lernpfad.</p>`;
+ const card=c?`<div class="cards-meta"><span>Karte ${current.flashIndex+1} / ${cs.length}</span><span>${moduleCode(c.module)} · ${c.kind==='course'?'Kurs #'+c.number:'Übung'}</span></div><button class="card-front ${current.flashRevealed?'card-back':''}" id="flip" aria-pressed="${current.flashRevealed}"><span class="card-kicker">${current.flashRevealed?'Eigene Antwort':c.type==='Lückentext'?'Lücken ergänzen':'Frage'}</span><h2>${escapeHTML(current.flashRevealed?c.answer:c.displayFront)}</h2>${example}<span class="card-flip-hint">${plainIcon('review')} ${current.flashRevealed?'Zur Frage wechseln':'Antwort ansehen'}</span></button>${refs}<div class="buttons cards-actions"><button class="secondary" id="cardPrev" ${current.flashIndex===0?'disabled':''}>Vorherige</button><button class="primary" id="cardNext" ${current.flashIndex===cs.length-1?'disabled':''}>Nächste ${plainIcon('arrow')}</button></div>`:'<div class="empty">In diesem Modul sind keine Lernkarten vorhanden.</div>';
+ const options=DATA.modules.map(m=>`<option value="${m.id}" ${scope===m.id?'selected':''}>${m.code} · ${escapeHTML(m.title)} · ${moduleCards(m.id).length} Karten</option>`).join('');
+ return `<button class="back" data-page="path">${plainIcon('arrow')} Zum Lernpfad</button><div class="eyebrow">${scope==='all'?'M01–M09':moduleCode(scope)} · WIEDERHOLEN</div><h1 class="title">Lernkarten</h1><p class="page-description">Wähle ein Modul. Alle zugehörigen Karten stehen dir direkt zum Lernen zur Verfügung.</p><div class="field-group"><label for="cardModule">Modul</label><select id="cardModule"><option value="all" ${scope==='all'?'selected':''}>Alle Module · ${CARD_CATALOG.length} Karten</option>${options}</select></div>${card}<p class="cards-note">Alle ${CARD_CATALOG.length} Karten sind enthalten: ${DATA.courseCards.length} Kursfragen mit eigenen Antworten und ${DATA.cards.length} zusätzliche Übungskarten.</p>`;
 }
 
 function practiceHTML(){let l=L(current.lesson),p=l.practice[0];if(!p)return `<div class="empty">Keine Praxisaufgabe verfügbar.</div>`;
@@ -601,7 +604,7 @@ document.addEventListener('click',e=>{let b=e.target.closest('button');if(!b||b.
  case 'freeRetry':assessFree(false);break;
   case 'nextQuestion':current.question++;current.answer=-1;current.pick=-1;current.draft='';current.freeVerdict=null;current.coachFeedback=null;current.coachError='';current.coachBusy=false;current.lastXPGain=0;render();break;
  case 'retryQuiz':beginQuiz(current.lesson,current.review);break;
- case 'cardNext':current.flashIndex=Math.min(lessonCards(current.lesson,current.cardSource).length-1,current.flashIndex+1);current.flashRevealed=false;render(false);break;
+ case 'cardNext':current.flashIndex=Math.min(moduleCards().length-1,current.flashIndex+1);current.flashRevealed=false;render(false);break;
  case 'cardPrev':current.flashIndex=Math.max(0,current.flashIndex-1);current.flashRevealed=false;render(false);break;
  case 'flip':current.flashRevealed=!current.flashRevealed;render(false);break;
  case 'showModel':{const field=byId('practiceText');progress.practices[current.lesson]={...(progress.practices[current.lesson]||{}),text:field.value};save();current.showPractice=true;render(false);break}
@@ -613,8 +616,13 @@ document.addEventListener('click',e=>{let b=e.target.closest('button');if(!b||b.
  }});
 document.addEventListener('input',e=>{if(e.target.id==='quizFreeText'&&current.page==='quiz'){current.draft=e.target.value;const b=byId('submitFree');if(b)b.disabled=current.draft.trim().length<12;const ai=byId('askCoach');if(ai)ai.disabled=current.draft.trim().length<12;const c=byId('freeCount');if(c)c.textContent=current.draft.length+' Zeichen';}});
 document.addEventListener('change',async e=>{
- if(e.target.id==='cardSource'){current.cardSource=e.target.value==='extra'?'extra':'course';current.flashIndex=0;current.flashRevealed=false;render(false)}
- if(e.target.id==='cardLesson'){if(!isLessonUnlocked(e.target.value)){render(false);return;}current.lesson=e.target.value;current.module=L(current.lesson).module;current.flashIndex=0;current.flashRevealed=false;render(false)}
+ if(e.target.id==='cardModule'){
+  const scope=e.target.value==='all'?'all':Number(e.target.value);
+  if(scope!=='all'&&!DATA.modules.some(m=>m.id===scope)){render(false);return;}
+  current.cardModule=scope;
+  if(scope!=='all'){current.module=scope;current.lesson=defaultLesson(scope);progress.activeModule=scope;save();}
+  current.flashIndex=0;current.flashRevealed=false;render(false);
+ }
  if(e.target.id==='reviewModule'){current.reviewScope=e.target.value==='all'?'all':'module';if(current.reviewScope==='module'){current.module=Number(e.target.value);current.lesson=defaultLesson(current.module);progress.activeModule=current.module;save();}render(false)}
  if(e.target.id==='importProgress'){
   const f=e.target.files[0];e.target.value='';if(!f)return;

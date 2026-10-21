@@ -24,7 +24,7 @@ M01 und M03 folgen den vorhandenen Kurslektionen. M04–M09 wurden aus den vorli
 
 ## Lernen und Freigabe
 
-Jedes Modul beginnt mit einer offenen ersten Lektion. Ein gemischtes Quiz mit mindestens 60 % öffnet die direkte Nachfolgerin. Frühere Abschlüsse außerhalb der Reihenfolge und ihre direkte Nachfolgerin bleiben zugänglich. Lernkarten, Praxisaufgaben und Fehlertraining beachten dieselbe Freigabe; vorhandene Daten gesperrter Lektionen bleiben gespeichert.
+Jedes Modul beginnt mit einer offenen ersten Lektion. Ein gemischtes Quiz mit mindestens 60 % öffnet die direkte Nachfolgerin. Frühere Abschlüsse außerhalb der Reihenfolge und ihre direkte Nachfolgerin bleiben zugänglich. Praxisaufgaben und Fehlertraining beachten dieselbe Freigabe; vorhandene Daten gesperrter Lektionen bleiben gespeichert. Lernkarten sind unabhängig davon vollständig zugänglich.
 
 Ein neuer Abschluss animiert beim Zurückkehren den erreichten Linienabschnitt einmal. Bei reduzierter Bewegung wird der Zustand ohne Animation angezeigt. Das Tor unter der letzten Lektion öffnet nach Abschluss aller Lektionen den Weg ins nächste Modul. Das Modulziel von M09 führt nach dessen Abschluss zum Gesamtfortschritt, ohne einen nicht vorhandenen M10-Lernpfad anzubieten.
 
@@ -51,8 +51,13 @@ Lernkarten, Fehlertraining, Fortschritt, Erklärungen, Praxisaufgaben und Quiz v
 
 ## Kursfragen mit eigenen Antworten
 
-Ergänzend zu den bisherigen 211 Übungskarten enthält die App die 521 bereitgestellten Skillyr-Kartenfragen aus M01–M09 mit neu formulierten Antworten. Die Veröffentlichung der Fragen wurde vom Nutzer als rechtegedeckt bestätigt. Es wurden keine Original-Rückseiten aus dem Portal übernommen. Die Kartensätze lassen sich im Bereich Lernkarten wechseln; beide verwenden die bestehenden Lektionsfreigaben.
+Ergänzend zu den bisherigen 211 Übungskarten enthält die App die 521 bereitgestellten Skillyr-Kartenfragen aus M01–M09 mit neu formulierten Antworten. Die Veröffentlichung der Fragen wurde vom Nutzer als rechtegedeckt bestätigt. Es wurden keine Original-Rückseiten aus dem Portal übernommen. Im Bereich Lernkarten stehen alle 732 Karten gemeinsam nach Modul zur Verfügung. Die Modulauswahl enthält M01–M09 sowie „Alle Module“. Es gibt keine Lektionssperren oder getrennten Kartensatzfilter im Kartentraining.
 
 Lückentextlösungen bleiben auf der Vorderseite verborgen. Zu den 16 Codekarten wurden ausdrücklich als eigene Beispiele bezeichnete Aufgaben ergänzt, weil die bereitgestellte Übersicht keinen Original-Code enthielt. Versionsabhängige Normen, pauschale Prozentangaben und rechtliche Verkürzungen werden in den Antworten eingeordnet; relevante Primärquellen stehen an der jeweiligen Karte. Die Antworten sind Lernhilfen, keine offiziellen Musterlösungen.
 
 Portal-XP werden nicht importiert. Quizfragen, Freitextaufgaben, vorhandener Lernstand und Bewertungsregeln bleiben unverändert. Die echte KI-Anbindung bleibt deaktiviert.
+
+
+## Vollständige Modulansicht der Lernkarten
+
+M01: 46 · M02: 133 · M03: 115 · M04: 89 · M05: 72 · M06: 78 · M07: 68 · M08: 64 · M09: 67 Karten. Insgesamt 732 Karten, davon 521 Kursfragen mit eigenen Antworten und 211 zusätzliche Übungskarten. Alle vorhandenen Vorderseiten, Antworten, Lückentexte, eigenen Codebeispiele und Quellen bleiben erhalten. Das Öffnen einer Karte vergibt keine Quiz-XP und schließt keine Lektion ab.
