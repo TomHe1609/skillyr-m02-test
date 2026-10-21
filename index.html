@@ -143,7 +143,7 @@ body{font-family:var(--code-font);font-size:14px}
 <style id="calm-home-style">
 /* Quiet navigation and a compact lesson timeline. All icons work offline. */
 .icon{display:inline-block;width:20px;height:20px;flex:0 0 auto;vertical-align:middle}
-header{padding:11px 17px;background:var(--c-16172bf5);border-color:var(--c-303147)}
+header{padding:11px 17px;padding-top:calc(11px + env(safe-area-inset-top,0px));background:var(--c-16172bf5);border-color:var(--c-303147)}
 .logo{width:29px;height:32px;background:none;border-radius:0;box-shadow:none;color:var(--c-c7b4f5)}
 .logo .icon{width:25px;height:25px}.brand{font-size:16px;letter-spacing:-.6px}.sub{font-size:9px;margin-top:3px;color:var(--c-a4a3bb)}
 .rightstats{gap:12px;color:var(--c-ccc7dc);font-size:12px;font-weight:600}.rightstats>span{display:inline-flex;align-items:center;gap:5px}.rightstats .icon{width:15px;height:15px;color:var(--c-a9a3bd)}
@@ -293,7 +293,7 @@ body[data-page="cards"] .card-front h2{white-space:pre-line}
 .theme-trigger{width:44px;height:44px;min-width:44px;display:inline-grid;place-items:center;padding:0;border:1px solid var(--c-4b415b);border-radius:11px;background:var(--c-1b1c30);color:var(--theme-accent)}
 .theme-trigger .icon{width:19px;height:19px}.rightstats .theme-trigger .icon{width:19px;height:19px;color:inherit}
 .quiz-top .theme-trigger{flex:0 0 40px;width:40px;min-width:40px;height:44px}
-.theme-dialog{width:calc(100% - 28px);max-width:430px;max-height:calc(100dvh - 40px);overflow-y:auto;box-sizing:border-box;padding:21px;background:var(--theme-bg);color:var(--c-f4f2ff);border:1px solid var(--c-51465f);border-radius:18px;font-family:var(--code-font)}
+.theme-dialog{width:calc(100% - 28px);max-width:430px;max-height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 40px);top:env(safe-area-inset-top,0px);bottom:env(safe-area-inset-bottom,0px);overflow-y:auto;box-sizing:border-box;padding:21px;background:var(--theme-bg);color:var(--c-f4f2ff);border:1px solid var(--c-51465f);border-radius:18px;font-family:var(--code-font)}
 .theme-dialog::backdrop{background:#000a;backdrop-filter:blur(5px)}
 .theme-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.theme-dialog h2{margin:0;font-size:21px;line-height:1.4;font-weight:650;letter-spacing:-.5px}
 .theme-dialog-close{width:44px;height:44px;flex:0 0 44px;border:1px solid var(--c-4b415b);border-radius:10px;background:var(--theme-panel);color:var(--c-e9dff2);font-size:23px}

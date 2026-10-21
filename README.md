@@ -71,3 +71,7 @@ Auf der Vorderseite sind ausschließlich die Lücken als farbige Platzhalter mar
 ## Farbauswahl
 
 Das Palettensymbol in der Kopfzeile und im Quiz öffnet vier Farbwelten: Lila, Petrol & Mint, Nachtblau & Hellblau und Graphit & Apricot. Die Auswahl verändert die Farben der gesamten Oberfläche und wird getrennt vom Lernstand unter `skillyr_learn_theme_v1` gespeichert. Sie bleibt nach Neuladen und offline erhalten und wird zwischen geöffneten App-Tabs synchronisiert. Lila ist die Vorgabe ohne gespeicherte Auswahl. Ein Farbwechsel verändert weder die laufende Aufgabe noch den Lernstand.
+
+## Anzeige auf dem Handy
+
+Die Kopfzeile und die Quizansicht berücksichtigen den oberen sicheren Bildschirmabstand (`safe-area-inset-top`). So bleiben Titel und Bedienelemente auch beim Start über den Home-Bildschirm unterhalb der Statusleiste. Die Farbauswahl passt ihre Höhe und Position ebenfalls an die sicheren oberen und unteren Abstände an. Auf Geräten ohne solche Abstände bleibt das bisherige Layout erhalten.
