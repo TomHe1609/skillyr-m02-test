@@ -20,7 +20,7 @@ M01 und M03 folgen den bereits vorliegenden Kurslektionen. M04 und M05 lagen als
 
 ## Oberfläche
 
-Die Startseite bündelt Modulauswahl, Lernstand und eine kompakte senkrechte Timeline. Einheitliche SVG-Linienicons ersetzen die farbigen Symbole in der Kopf- und Fußnavigation. Hinweise und künftige Module stehen im aufklappbaren Bereich „Über diese Testversion“.
+Die Startseite bündelt Modulauswahl, Lernstand und eine schlanke geschwungene Timeline mit versetzten Stationen. Einheitliche SVG-Linienicons ersetzen die farbigen Symbole in der Kopf- und Fußnavigation. Hinweise und künftige Module stehen im aufklappbaren Bereich „Über diese Testversion“.
 
 ## Lernen
 
