@@ -20,7 +20,7 @@ M01 und M03 folgen den bereits vorliegenden Kurslektionen. M04 und M05 lagen als
 
 ## Oberfläche
 
-Die Startseite bündelt Modulauswahl, Lernstand und eine schlanke geschwungene Timeline mit versetzten Stationen. Einheitliche SVG-Linienicons ersetzen die farbigen Symbole in der Kopf- und Fußnavigation. Hinweise und künftige Module stehen im aufklappbaren Bereich „Über diese Testversion“.
+Die Startseite bündelt Modulauswahl, Lernstand und eine geschwungene Timeline mit kräftigerer Linie und versetzten Stationen. Einheitliche SVG-Linienicons ersetzen die farbigen Symbole in der Kopf- und Fußnavigation. Hinweise und künftige Module stehen im aufklappbaren Bereich „Über diese Testversion“.
 
 ## Lernen
 
@@ -30,6 +30,12 @@ Die Startseite bündelt Modulauswahl, Lernstand und eine schlanke geschwungene T
 - Eigener Lernpfad und Kartenfilter pro Modul, gemeinsame Fortschrittsübersicht.
 - Fehlertraining pro Modul oder über alle fünf Module.
 - Export/Import des gesamten Lernstands und Offline-Unterstützung nach dem ersten erfolgreichen Laden.
+
+## Lektionsfreigabe und Abschluss
+
+Jedes Modul startet mit einer offenen ersten Lektion. Ein erfolgreiches gemischtes Quiz (mindestens 60 %) öffnet die direkte Nachfolgerin. Abgeschlossene Lektionen bleiben zum Wiederholen offen; frühere Abschlüsse außerhalb der Reihenfolge und deren direkte Nachfolger bleiben erhalten. Lernkarten, Praxisaufgaben und Fehlertraining beachten dieselbe Freigabe. Bereits gespeicherte Antworten und offene Fehler gesperrter Lektionen bleiben erhalten.
+
+Nach einem neuen Abschluss wird beim Zurückkehren zum Lernpfad der erreichte Linienabschnitt einmal ausgefüllt und die nächste Station hervorgehoben. Die Ansicht springt zum erreichten Abschnitt. Wiederholungen lösen keine neue Freischaltanimation aus. Bei reduzierter Bewegung wird der neue Zustand ohne Animation angezeigt. Freigaben werden aus dem gespeicherten Lernstand abgeleitet und bleiben nach Laden, Import und Offline-Nutzung konsistent.
 
 ## Bisherigen M02-Fortschritt erhalten
 
