@@ -43,3 +43,7 @@ Grundlage sind die bereits betrachteten Kursthemen und eigenständig formulierte
 GitHub Pages verwendet `main` und `/(root)` im Repository `TomHe1609/skillyr-m02-test`. `index.html` enthält sämtliche App-Daten; `data-m01-m09.json` stellt denselben öffentlichen Inhalt separat bereit. Die bisherigen Dateien `data-m01-m05.json` und `data-m02.json` bleiben unverändert als Kompatibilitätsdateien erhalten.
 
 Der Service Worker erfasst nur Dateien dieser Test-App und löscht ausschließlich ältere eigene Caches mit dem Präfix `skillyr-m02-test::`. Das Repository `TomHe1609/It-lernquiz`, dessen GitHub Pages sowie seine lokalen Speicher und Offline-Caches bleiben unverändert. Beim Seitenaufruf fallen die üblichen Verbindungsdaten des Hosting-Anbieters an.
+
+## Einheitliche Lernansichten
+
+Lernkarten, Fehlertraining, Fortschritt, Erklärungen, Praxisaufgaben und Quiz verwenden die ruhige Gestaltung der Startseite mit flachen Flächen und schlichten Linienicons. Die Lernstandsicherung und der Import stehen unter „Fortschritt sichern und verwalten“. Startseite, Inhalte, Freischaltungen, Bewertung und lokale Speicherung bleiben erhalten.
