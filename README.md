@@ -56,3 +56,7 @@ GitHub Pages: `main` und `/(root)` im Repository `TomHe1609/skillyr-m02-test`.
 `index.html` enthält die eingebetteten App-Daten; `data-m01-m05.json` stellt denselben öffentlichen Inhalt separat bereit. Die bisherige `data-m02.json` bleibt unverändert als Kompatibilitätsdatei erhalten. Der Service Worker speichert nur Dateien dieser Test-App und entfernt ausschließlich ältere Caches mit dem Präfix `skillyr-m02-test::`.
 
 `TomHe1609/It-lernquiz`, dessen Pages-Konfiguration, lokale Speicher und Offline-Caches werden nicht verändert.
+
+## Tor zum nächsten Modul
+
+Unter der letzten Lektion steht ein Modul-Tor. Nach Abschluss aller Lektionen des aktuellen Moduls führt es zum nächsten vorhandenen Testmodul und behält den Lernstand bei. Das Tor zu M06 bleibt geschlossen, da M06 noch nicht in der Testversion enthalten ist. Die bestehende Modulauswahl und der übrige Aufbau der Startseite bleiben unverändert.
